@@ -1,3 +1,52 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as t;
+
 #step-four {
-  display: none;
+  // display: none;
+  .summary-content-wrapper {
+    margin-top: 2rem;
+    color: $clr-grey-500;
+
+    .summary-plan-wrapper p:last-child:not(.summary-plan-left-col p),
+    .summary-plan-left-col p:first-child {
+      color: $clr-blue-950;
+    }
+
+    .summary-plan-wrapper {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+
+      &:has(.summary-plan-left-col) {
+        padding-block: 1.25rem;
+        border-bottom: 1px solid $clr-grey-250;
+
+        p:last-child:not(.summary-plan-left-col p),
+        p:first-child {
+          font-weight: t.$font-bold;
+        }
+      }
+
+      .summary-plan-left-col {
+        display: grid;
+        gap: 0.25rem;
+
+        p:last-child {
+          cursor: pointer;
+        }
+      }
+    }
+
+    #summary-price {
+      padding-block: 1.25rem;
+
+      p:last-child {
+        color: $clr-purple-600;
+        font-size: 1.25rem;
+        font-weight: t.$font-bold;
+      }
+    }
+  }
 }
