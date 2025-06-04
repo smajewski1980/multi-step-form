@@ -34,7 +34,7 @@ main {
   background-color: hsl(0, 100%, 100%);
   border-radius: 10px;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: 1fr 2fr;
   max-width: 1440px;
   margin-inline: auto;
@@ -42,7 +42,8 @@ main {
 }
 main .step {
   padding-block: 1.5rem 2rem;
-  padding-inline-end: 2rem;
+  padding-inline-end: 4rem;
+  margin-block-end: 1rem;
 }
 main .step h2 {
   margin-block-end: 0.25rem;
@@ -98,5 +99,23 @@ aside {
 }
 
 #steps-buttons-wrapper {
-  outline: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-end: 4rem;
+  padding-bottom: 0.75rem;
+}
+#steps-buttons-wrapper button {
+  border-radius: 5px;
+  padding: 0.7rem 0.85rem;
+  border: none;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  cursor: pointer;
+}
+#steps-buttons-wrapper button:first-child {
+  visibility: hidden;
+}
+#steps-buttons-wrapper button:last-child {
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(213, 96%, 18%);
 }/*# sourceMappingURL=main.css.map */

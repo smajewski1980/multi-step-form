@@ -1,3 +1,27 @@
+@use "../abstracts/variables" as *;
+
 #steps-buttons-wrapper {
-  outline: 2px solid red;
+  // outline: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-end: 4rem;
+  padding-bottom: 0.75rem;
+
+  button {
+    border-radius: 5px;
+    padding: 0.7rem 0.85rem;
+    border: none;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    cursor: pointer;
+  }
+
+  button:first-child {
+    visibility: hidden;
+  }
+
+  button:last-child {
+    color: $clr-white;
+    background-color: $clr-blue-950;
+  }
 }
