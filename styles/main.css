@@ -193,6 +193,9 @@ main .step h2 {
   color: hsl(243, 100%, 62%);
 }
 
+#step-four {
+  display: none;
+}
 #step-four .summary-content-wrapper {
   margin-top: 2rem;
   color: hsl(231, 11%, 63%);
@@ -232,7 +235,22 @@ main .step h2 {
 }
 
 #step-five {
-  display: none;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-rows: 60px min-content min-content;
+  place-content: center;
+  justify-items: center;
+  padding-inline-end: 5rem;
+  height: 100%;
+}
+#step-five img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+#step-five p {
+  width: 50ch;
+  line-height: 1.5;
+  text-align: center;
 }
 
 aside {
