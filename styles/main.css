@@ -23,6 +23,10 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+h2 + p {
+  color: hsl(231, 11%, 63%);
+}
+
 .slider-active {
   font-weight: 700;
   color: hsl(213, 96%, 18%);
@@ -38,6 +42,7 @@ body {
 main {
   background-color: hsl(0, 100%, 100%);
   border-radius: 10px;
+  box-shadow: 0px 7px 15px -5px #dddee4;
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 2fr;
@@ -62,9 +67,6 @@ main .step h2 {
 #step-one {
   display: none;
 }
-#step-one p {
-  color: hsl(231, 11%, 63%);
-}
 #step-one form {
   margin-block-start: 2rem;
 }
@@ -88,8 +90,8 @@ main .step h2 {
   color: hsl(231, 11%, 63%);
 }
 
-#step-two h2 + p {
-  color: hsl(231, 11%, 63%);
+#step-two {
+  display: none;
 }
 #step-two .plan-card-wrapper {
   display: flex;
@@ -151,7 +153,43 @@ main .step h2 {
 }
 
 #step-three {
-  display: none;
+  padding-block-end: 0rem;
+}
+#step-three .add-ons-wrapper {
+  padding-block-start: 2.5rem;
+  display: grid;
+  gap: 1rem;
+}
+#step-three .add-ons-wrapper .add-on-wrapper:has(input[type=checkbox]:checked) {
+  outline: 2px solid hsl(243, 100%, 62%);
+}
+#step-three .add-ons-wrapper .add-on-wrapper {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  outline: 2px solid #dddee4;
+  padding: 1rem;
+}
+#step-three .add-ons-wrapper .add-on-wrapper input {
+  cursor: pointer;
+  accent-color: hsl(243, 100%, 62%);
+  width: 16px;
+  aspect-ratio: 1;
+}
+#step-three .add-ons-wrapper .add-on-wrapper .add-on-text-wrapper {
+  flex: 1;
+  margin-inline-start: 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+#step-three .add-ons-wrapper .add-on-wrapper .add-on-text-wrapper p:first-child {
+  font-weight: 700;
+}
+#step-three .add-ons-wrapper .add-on-wrapper .add-on-text-wrapper p:last-child {
+  color: hsl(231, 11%, 63%);
+}
+#step-three .add-ons-wrapper .add-on-wrapper .price {
+  color: hsl(243, 100%, 62%);
 }
 
 #step-four {

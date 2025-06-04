@@ -1,5 +1,5 @@
-// - Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu)
-// - Weights: 400, 500, 700
+@use "../abstracts/variables" as *;
+
 @font-face {
   font-family: "Ubuntu";
   src: url("/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
@@ -13,4 +13,8 @@ $font-bold: 700;
 
 body {
   font-family: $font;
+}
+
+h2 + p {
+  color: $clr-grey-500;
 }

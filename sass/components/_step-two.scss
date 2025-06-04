@@ -3,11 +3,7 @@
 @use "../base/typography" as t;
 
 #step-two {
-  // display: none;
-
-  h2 + p {
-    color: $clr-grey-500;
-  }
+  display: none;
 
   .plan-card-wrapper {
     display: flex;

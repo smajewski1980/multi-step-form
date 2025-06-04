@@ -1,3 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as t;
+
 #step-three {
-  display: none;
+  // display: none;
+  padding-block-end: 0rem;
+
+  .add-ons-wrapper {
+    padding-block-start: 2.5rem;
+    display: grid;
+    gap: 1rem;
+
+    .add-on-wrapper:has(input[type="checkbox"]:checked) {
+      outline: 2px solid $clr-purple-600;
+    }
+
+    .add-on-wrapper {
+      align-items: center;
+      border-radius: 5px;
+      display: flex;
+      outline: 2px solid $clr-grey-250;
+      padding: 1rem;
+
+      input {
+        cursor: pointer;
+        accent-color: $clr-purple-600;
+        width: 16px;
+        aspect-ratio: 1;
+      }
+      .add-on-text-wrapper {
+        flex: 1;
+        margin-inline-start: 1rem;
+        display: grid;
+        gap: 0.25rem;
+
+        p:first-child {
+          font-weight: t.$font-bold;
+        }
+        p:last-child {
+          color: $clr-grey-500;
+        }
+      }
+      .price {
+        color: $clr-purple-600;
+      }
+    }
+  }
 }
