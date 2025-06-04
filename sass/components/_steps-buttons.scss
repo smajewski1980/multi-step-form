@@ -21,10 +21,18 @@
     background: transparent;
     border: none;
     padding: 0 0.5rem;
+
+    &:hover {
+      color: $clr-blue-950;
+    }
   }
 
   button:last-child {
     color: $clr-white;
     background-color: $clr-blue-950;
+
+    &:hover {
+      background-color: $clr-purple-600;
+    }
   }
 }

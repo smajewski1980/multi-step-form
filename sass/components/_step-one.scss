@@ -3,10 +3,23 @@
 @use "../base/typography" as *;
 
 #step-one {
-  display: none;
+  // display: none;
 
   form {
     margin-block-start: 2rem;
+
+    input:required:focus {
+      border: 1px solid $clr-stop;
+      outline: none;
+    }
+
+    input:required:valid {
+      border-color: $clr-go;
+    }
+
+    input:invalid {
+      border-color: $clr-stop;
+    }
 
     .form-group {
       display: grid;
@@ -21,6 +34,7 @@
         border-radius: 5px;
         border: 2px solid $clr-blue-100;
         margin-bottom: 1rem;
+
         &::placeholder {
           color: $clr-grey-500;
         }

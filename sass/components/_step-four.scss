@@ -35,6 +35,10 @@
 
         p:last-child {
           cursor: pointer;
+
+          &:hover {
+            color: $clr-purple-600;
+          }
         }
       }
     }

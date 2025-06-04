@@ -64,11 +64,18 @@ main .step h2 {
   font-size: 2rem;
 }
 
-#step-one {
-  display: none;
-}
 #step-one form {
   margin-block-start: 2rem;
+}
+#step-one form input:required:focus {
+  border: 1px solid red;
+  outline: none;
+}
+#step-one form input:required:valid {
+  border-color: green;
+}
+#step-one form input:invalid {
+  border-color: red;
 }
 #step-one form .form-group {
   display: grid;
@@ -101,6 +108,7 @@ main .step h2 {
 }
 #step-two .plan-card-wrapper .plan-card {
   border-radius: 5px;
+  cursor: pointer;
   outline: 1px solid hsl(231, 11%, 63%);
   flex: 1;
   padding: 1rem;
@@ -167,6 +175,7 @@ main .step h2 {
 #step-three .add-ons-wrapper .add-on-wrapper {
   align-items: center;
   border-radius: 5px;
+  cursor: pointer;
   display: flex;
   outline: 2px solid #dddee4;
   padding: 1rem;
@@ -225,6 +234,9 @@ main .step h2 {
 #step-four .summary-content-wrapper .summary-plan-wrapper .summary-plan-left-col p:last-child {
   cursor: pointer;
 }
+#step-four .summary-content-wrapper .summary-plan-wrapper .summary-plan-left-col p:last-child:hover {
+  color: hsl(243, 100%, 62%);
+}
 #step-four .summary-content-wrapper #summary-price {
   padding-block: 1.25rem;
 }
@@ -235,12 +247,12 @@ main .step h2 {
 }
 
 #step-five {
-  display: grid;
+  display: none;
   gap: 0.5rem;
   grid-template-rows: 60px min-content min-content;
   place-content: center;
   justify-items: center;
-  padding-inline-end: 5rem;
+  padding-inline-end: 3rem;
   height: 100%;
 }
 #step-five img {
@@ -314,7 +326,13 @@ aside .radio-wrapper label:nth-of-type(2) {
   border: none;
   padding: 0 0.5rem;
 }
+#steps-buttons-wrapper button:first-child:hover {
+  color: hsl(213, 96%, 18%);
+}
 #steps-buttons-wrapper button:last-child {
   color: hsl(0, 100%, 100%);
   background-color: hsl(213, 96%, 18%);
+}
+#steps-buttons-wrapper button:last-child:hover {
+  background-color: hsl(243, 100%, 62%);
 }/*# sourceMappingURL=main.css.map */

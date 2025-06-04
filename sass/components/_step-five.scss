@@ -1,11 +1,11 @@
 #step-five {
-  // display: none;
-  display: grid;
+  display: none;
+  // display: grid;
   gap: 0.5rem;
   grid-template-rows: 60px min-content min-content;
   place-content: center;
   justify-items: center;
-  padding-inline-end: 5rem;
+  padding-inline-end: 3rem;
   height: 100%;
 
   img {
