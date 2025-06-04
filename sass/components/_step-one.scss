@@ -3,13 +3,11 @@
 @use "../base/typography" as *;
 
 #step-one {
-  // outline: 2px solid blue;
   p {
     color: $clr-grey-500;
   }
 
   form {
-    // outline: 2px solid pink;
     margin-block-start: 2rem;
 
     .form-group {
