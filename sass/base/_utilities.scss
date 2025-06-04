@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as *;
+@use "./typography" as t;
+
+.slider-active {
+  font-weight: t.$font-bold;
+  color: $clr-blue-950;
+}

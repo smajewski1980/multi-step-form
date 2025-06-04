@@ -23,6 +23,11 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.slider-active {
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+}
+
 body {
   min-height: 100vh;
   display: grid;
@@ -83,7 +88,7 @@ main .step h2 {
   color: hsl(231, 11%, 63%);
 }
 
-#step-two p {
+#step-two h2 + p {
   color: hsl(231, 11%, 63%);
 }
 #step-two .plan-card-wrapper {
@@ -118,10 +123,31 @@ main .step h2 {
   color: hsl(231, 11%, 63%);
 }
 #step-two .plan-slider-wrapper {
+  align-items: center;
+  color: hsl(231, 11%, 63%);
   display: flex;
   margin-inline: auto;
   width: -moz-min-content;
   width: min-content;
+}
+#step-two .plan-slider-wrapper #plan-slider {
+  width: 3rem;
+  height: 1.5rem;
+  margin-inline: 1.5rem;
+  border-radius: 999vw;
+  background-color: hsl(213, 96%, 18%);
+  position: relative;
+  padding: 0.3rem;
+}
+#step-two .plan-slider-wrapper #plan-slider::after {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  height: 1rem;
+  aspect-ratio: 1;
+  margin-block: auto;
+  background-color: hsl(0, 100%, 100%);
 }
 
 #step-three {
