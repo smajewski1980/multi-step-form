@@ -211,15 +211,17 @@ aside .radio-wrapper label:nth-of-type(2) {
   padding-bottom: 0.75rem;
 }
 #steps-buttons-wrapper button {
-  border-radius: 5px;
-  padding: 0.7rem 0.85rem;
+  border-radius: 7px;
+  padding: 1rem 1.75rem;
   border: none;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
   cursor: pointer;
 }
 #steps-buttons-wrapper button:first-child {
-  visibility: hidden;
+  cursor: pointer;
+  color: hsl(231, 11%, 63%);
+  background: transparent;
+  border: none;
+  padding: 0 0.5rem;
 }
 #steps-buttons-wrapper button:last-child {
   color: hsl(0, 100%, 100%);

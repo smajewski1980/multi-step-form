@@ -8,16 +8,19 @@
   padding-bottom: 0.75rem;
 
   button {
-    border-radius: 5px;
-    padding: 0.7rem 0.85rem;
+    border-radius: 7px;
+    padding: 1rem 1.75rem;
     border: none;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
     cursor: pointer;
   }
 
   button:first-child {
-    visibility: hidden;
+    // visibility: hidden;
+    cursor: pointer;
+    color: $clr-grey-500;
+    background: transparent;
+    border: none;
+    padding: 0 0.5rem;
   }
 
   button:last-child {
