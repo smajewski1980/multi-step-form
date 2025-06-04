@@ -79,34 +79,42 @@
       </aside>
 
       <div class="steps-wrapper">
-        <div id="step-one">
+        <div id="step-one" class="step">
           <h2>Personal info</h2>
           <p>Please provide your name, email address, and phone number.</p>
 
-          <label for="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="e.g. Stephen King"
-          />
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="e.g. stephenking@lorem.com"
-          />
-          <label for="phone">Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            placeholder="e.g. +1 234 567 890"
-          />
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="e.g. Stephen King"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="e.g. stephenking@lorem.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="e.g. +1 234 567 890"
+              />
+            </div>
+          </form>
         </div>
 
-        <div id="step-two">
+        <div id="step-two" class="step">
           <h2>Select your plan</h2>
           <p>You have the option of monthly or yearly billing.</p>
 
@@ -133,7 +141,7 @@
 
         <!-- the values in step three will be dependent on last step (monthly/yearly) -->
 
-        <div id="step-three">
+        <div id="step-three" class="step">
           <h2>Pick add-ons</h2>
           <p>Add-ons help enhance your gaming experience.</p>
 
@@ -167,7 +175,7 @@
           </div>
         </div>
 
-        <div id="step-four">
+        <div id="step-four" class="step">
           <h2>Finishing up</h2>
           <p>Double-check everything looks OK before confirming.</p>
 
@@ -206,7 +214,7 @@
           </p>
         </div>
 
-        <div class="steps-buttons-wrapper">
+        <div id="steps-buttons-wrapper">
           <button>Go Back</button>
           <button>Next Step</button>
         </div>

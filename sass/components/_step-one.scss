@@ -1,4 +1,34 @@
 @use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
 
 #step-one {
+  // outline: 2px solid blue;
+  p {
+    color: $clr-grey-500;
+  }
+
+  form {
+    // outline: 2px solid pink;
+    margin-block-start: 2rem;
+
+    .form-group {
+      display: grid;
+      gap: 0.3rem;
+
+      label {
+        font-weight: $font-bold;
+      }
+
+      input {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 2px solid $clr-blue-100;
+        margin-bottom: 1rem;
+        &::placeholder {
+          color: $clr-grey-500;
+        }
+      }
+    }
+  }
 }
