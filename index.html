@@ -121,19 +121,42 @@
           <h2>Select your plan</h2>
           <p>You have the option of monthly or yearly billing.</p>
 
-          <div class="plan-card-wrapper"></div>
-          <input type="radio" name="plan" id="plan-arcade" value="arcade" />
-          <label for="plan-arcade"
-            >Arcade<br />$9/mo<span id="plan-span-1"></span
-          ></label>
-          <input type="radio" name="plan" id="plan-advanced" value="advanced" />
-          <label for="plan-advanced"
-            >Advanced<br />$12/mo<span id="plan-span-2"></span
-          ></label>
-          <input type="radio" name="plan" id="plan-pro" value="pro" />
-          <label for="plan-pro"
-            >Pro<br />$15/mo<span id="plan-span-3"></span
-          ></label>
+          <div class="plan-card-wrapper">
+            <div class="plan-card">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade plan" />
+              <input type="radio" name="plan" id="plan-arcade" value="arcade" />
+              <label for="plan-arcade"
+                ><span>Arcade</span><br />
+                <span id="plan-span-1">$9/mo</span>
+              </label>
+            </div>
+
+            <div class="plan-card">
+              <img
+                src="./assets/images/icon-advanced.svg"
+                alt="advanced plan"
+              />
+              <input
+                type="radio"
+                name="plan"
+                id="plan-advanced"
+                value="advanced"
+              />
+              <label for="plan-advanced">
+                <span>Advanced</span><br />
+                <span id="plan-span-2">$12/mo</span>
+              </label>
+            </div>
+
+            <div class="plan-card">
+              <img src="./assets/images/icon-pro.svg" alt="pro plan" />
+              <input type="radio" name="plan" id="plan-pro" value="pro" />
+              <label for="plan-pro"
+                ><span>Pro</span><br />
+                <span id="plan-span-3">$15/mo</span>
+              </label>
+            </div>
+          </div>
 
           <div class="plan-slider-wrapper">
             <p>Monthly</p>

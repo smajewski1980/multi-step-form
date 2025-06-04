@@ -3,6 +3,7 @@
 @use "../base/typography" as *;
 
 #step-one {
+  display: none;
   p {
     color: $clr-grey-500;
   }

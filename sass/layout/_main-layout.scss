@@ -17,6 +17,11 @@ main {
   margin-inline: auto;
   padding: 0.75rem;
 
+  .steps-wrapper {
+    min-width: 506px;
+    min-height: 378px;
+  }
+
   .step {
     padding-block: 1.5rem 2rem;
     padding-inline-end: 4rem;

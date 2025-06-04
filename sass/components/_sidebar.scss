@@ -28,6 +28,11 @@ aside {
 
     input[type="radio"]:checked + label {
       background-color: $clr-blue-200;
+      color: black;
+    }
+
+    label {
+      cursor: pointer;
     }
 
     label:first-of-type {

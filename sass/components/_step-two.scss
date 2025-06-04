@@ -1,3 +1,55 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as t;
+
 #step-two {
-  display: none;
+  // display: none;
+
+  p {
+    color: $clr-grey-500;
+  }
+
+  .plan-card-wrapper {
+    display: flex;
+    margin-block: 2rem 1rem;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .plan-card {
+      border-radius: 5px;
+      outline: 1px solid $clr-grey-500;
+      flex: 1;
+      padding: 1rem;
+      margin-bottom: 1rem;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      &:has(input[type="radio"]:checked) {
+        outline: 1px solid $clr-purple-600;
+      }
+
+      img {
+        width: 45px;
+        margin-bottom: 3rem;
+      }
+
+      label {
+        span:nth-of-type(1) {
+          display: inline-block;
+          font-weight: t.$font-bold;
+          margin-block-end: 0.25rem;
+        }
+        span:nth-of-type(2) {
+          color: $clr-grey-500;
+        }
+      }
+    }
+  }
+  .plan-slider-wrapper {
+    display: flex;
+    margin-inline: auto;
+    width: min-content;
+  }
 }
