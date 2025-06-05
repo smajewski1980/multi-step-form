@@ -55,11 +55,11 @@ main {
   padding: 0.75rem;
 }
 main .steps-wrapper {
-  min-width: 506px;
+  min-width: 525px;
   min-height: 400px;
 }
 main .step {
-  padding-block: 1.5rem 2rem;
+  padding-block: 1.5rem 0rem;
   padding-inline-end: 4rem;
 }
 main .step h2 {
@@ -121,7 +121,8 @@ main .step h2 {
   display: none;
 }
 #step-two .plan-card-wrapper .plan-card:has(input[type=radio]:checked) {
-  outline: 1px solid hsl(243, 100%, 62%);
+  outline: 2px solid hsl(243, 100%, 62%);
+  background-color: hsl(231, 100%, 99%);
 }
 #step-two .plan-card-wrapper .plan-card img {
   width: 45px;
@@ -143,30 +144,31 @@ main .step h2 {
 }
 #step-two .plan-slider-wrapper {
   align-items: center;
+  border-radius: 10px;
   color: hsl(231, 11%, 63%);
   display: flex;
-  margin-inline: auto;
-  width: -moz-min-content;
-  width: min-content;
+  width: 100%;
+  justify-content: center;
+  background-color: hsl(218, 100%, 97%);
+  padding-block: 0.75rem;
 }
 #step-two .plan-slider-wrapper #plan-slider {
   cursor: pointer;
-  width: 3rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 1rem;
   margin-inline: 1.5rem;
   border-radius: 999vw;
   background-color: hsl(213, 96%, 18%);
   position: relative;
-  padding: 0.3rem;
+  padding: 0.125rem;
 }
 #step-two .plan-slider-wrapper #plan-slider #slide {
   border-radius: 50%;
   position: absolute;
-  height: 1rem;
+  height: 0.75rem;
   aspect-ratio: 1;
-  margin-block: auto;
   background-color: hsl(0, 100%, 100%);
-  right: 1.7rem;
+  right: 1.125rem;
   transition: right 0.25s ease;
 }
 
@@ -181,6 +183,7 @@ main .step h2 {
 }
 #step-three .add-ons-wrapper .add-on-wrapper:has(input[type=checkbox]:checked) {
   outline: 2px solid hsl(243, 100%, 62%);
+  background-color: hsl(231, 100%, 99%);
 }
 #step-three .add-ons-wrapper .add-on-wrapper {
   align-items: center;

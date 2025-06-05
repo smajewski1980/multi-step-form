@@ -13,6 +13,7 @@
 
     .add-on-wrapper:has(input[type="checkbox"]:checked) {
       outline: 2px solid $clr-purple-600;
+      background-color: $clr-blue-50;
     }
 
     .add-on-wrapper {

@@ -34,6 +34,10 @@ class SignUpObj {
   generateSummary() {}
 }
 
+const stepOneName = document.getElementById("name");
+const stepOneEmail = document.getElementById("email");
+const stepOnePhone = document.getElementById("phone");
+
 // **********starts the code for switching steps*******************
 // clear out current step
 function clearSteps() {
@@ -55,23 +59,36 @@ function getStepWrapper() {
   return stepWrappers.filter((w) => w.id === getStepIdString())[0];
 }
 
+function checkStepOneForEmptyFields() {
+  return stepOneName.value && stepOneEmail.value && stepOnePhone.value
+    ? true
+    : false;
+}
+
 // sets the new current step
 function handleUpdateCurrent(e) {
-  const newCurrent = parseInt(e.target.dataset.step);
-  currentStep = newCurrent;
-  updateUI();
+  if (checkStepOneForEmptyFields()) {
+    const newCurrent = parseInt(e.target.dataset.step);
+    currentStep = newCurrent;
+    updateUI();
+  }
 }
 
 function decrementCurrent() {
-  currentStep--;
-  updateCurrentStepBtn();
-  updateUI();
+  if (checkStepOneForEmptyFields()) {
+    currentStep--;
+    updateCurrentStepBtn();
+    updateUI();
+  }
 }
 
 function incrementCurrent() {
-  currentStep < 4 && currentStep++;
-  updateCurrentStepBtn();
-  updateUI();
+  if (checkStepOneForEmptyFields()) {
+    currentStep < 4 && currentStep++;
+    console.log(checkStepOneForEmptyFields());
+    updateCurrentStepBtn();
+    updateUI();
+  }
 }
 
 // get the id to use for the current step wrapper to be displayed
@@ -109,14 +126,14 @@ let billingFrequency = "monthly";
 function handleBillingFrequency() {
   if (billingFrequency === "monthly") {
     billingFrequency = "yearly";
-    slide.style.right = ".3rem";
+    slide.style.right = ".125rem";
     planMonthlyText.classList.remove("slider-active");
     planYearlyText.classList.add("slider-active");
     updatePlanCardPrices();
     updateAddOnPrices();
   } else {
     billingFrequency = "monthly";
-    slide.style.right = "1.7rem";
+    slide.style.right = "1.125rem";
     planYearlyText.classList.remove("slider-active");
     planMonthlyText.classList.add("slider-active");
     updatePlanCardPrices();

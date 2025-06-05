@@ -24,7 +24,8 @@
       }
 
       &:has(input[type="radio"]:checked) {
-        outline: 1px solid $clr-purple-600;
+        outline: 2px solid $clr-purple-600;
+        background-color: $clr-blue-50;
       }
 
       img {
@@ -52,29 +53,31 @@
   }
   .plan-slider-wrapper {
     align-items: center;
+    border-radius: 10px;
     color: $clr-grey-500;
     display: flex;
-    margin-inline: auto;
-    width: min-content;
+    width: 100%;
+    justify-content: center;
+    background-color: $clr-blue-100;
+    padding-block: 0.75rem;
 
     #plan-slider {
       cursor: pointer;
-      width: 3rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 1rem;
       margin-inline: 1.5rem;
       border-radius: 999vw;
       background-color: $clr-blue-950;
       position: relative;
-      padding: 0.3rem;
+      padding: 0.125rem;
 
       #slide {
         border-radius: 50%;
         position: absolute;
-        height: 1rem;
+        height: 0.75rem;
         aspect-ratio: 1;
-        margin-block: auto;
         background-color: $clr-white;
-        right: 1.7rem;
+        right: 1.125rem;
         transition: right 0.25s ease;
       }
     }
