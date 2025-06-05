@@ -113,12 +113,14 @@ function handleBillingFrequency() {
     planMonthlyText.classList.remove("slider-active");
     planYearlyText.classList.add("slider-active");
     updatePlanCardPrices();
+    updateAddOnPrices();
   } else {
     billingFrequency = "monthly";
     slide.style.right = "1.7rem";
     planYearlyText.classList.remove("slider-active");
     planMonthlyText.classList.add("slider-active");
     updatePlanCardPrices();
+    updateAddOnPrices();
   }
 }
 
@@ -160,8 +162,9 @@ planCards.forEach((card) => {
 });
 
 // ********** end billing frequency*****************
-// does the same as the planCards code above
-// for the add-on cards on step three
+
+// this does the same as the planCards code directly
+// above for the add-on cards on step three
 const addOnCards = Array.from(
   document.getElementsByClassName("add-on-wrapper")
 );
@@ -174,3 +177,23 @@ addOnCards.forEach((card) => {
     input.checked = !checkedStatus;
   });
 });
+
+const addOnPriceOne = document.getElementById("add-on-span-one");
+const addOnPriceTwo = document.getElementById("add-on-span-two");
+const addOnPriceThree = document.getElementById("add-on-span-three");
+
+function updateAddOnPrices() {
+  const monthlyPricing = ["1/mo", "2/mo", "2/mo"];
+  const yearlyPricing = ["10/yr", "20/yr", "20/yr"];
+
+  if (billingFrequency === "monthly") {
+    addOnPriceOne.innerText = monthlyPricing[0];
+    addOnPriceTwo.innerText = monthlyPricing[1];
+    addOnPriceThree.innerText = monthlyPricing[2];
+    return;
+  }
+
+  addOnPriceOne.innerText = yearlyPricing[0];
+  addOnPriceTwo.innerText = yearlyPricing[1];
+  addOnPriceThree.innerText = yearlyPricing[2];
+}
