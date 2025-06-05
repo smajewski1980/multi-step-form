@@ -214,3 +214,15 @@ function updateAddOnPrices() {
   addOnPriceTwo.innerText = yearlyPricing[1];
   addOnPriceThree.innerText = yearlyPricing[2];
 }
+
+// step four summary jump back to the plans with the link
+const changePlanLink = document.getElementById("jump-to-plans");
+
+function handleChangePlanLink() {
+  currentStep = 2;
+  updateCurrentStepBtn();
+  updateUI();
+}
+
+changePlanLink.addEventListener("click", handleChangePlanLink);
+// need to handle the button when step 4 is displayed
