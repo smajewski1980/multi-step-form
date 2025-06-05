@@ -17,6 +17,7 @@
   button:first-child {
     // visibility: hidden;
     cursor: pointer;
+    display: none;
     color: $clr-grey-500;
     background: transparent;
     border: none;
@@ -30,6 +31,7 @@
   button:last-child {
     color: $clr-white;
     background-color: $clr-blue-950;
+    margin-left: auto;
 
     &:hover {
       background-color: $clr-purple-600;

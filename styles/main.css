@@ -321,6 +321,7 @@ aside .radio-wrapper label:nth-of-type(2) {
 }
 #steps-buttons-wrapper button:first-child {
   cursor: pointer;
+  display: none;
   color: hsl(231, 11%, 63%);
   background: transparent;
   border: none;
@@ -332,6 +333,7 @@ aside .radio-wrapper label:nth-of-type(2) {
 #steps-buttons-wrapper button:last-child {
   color: hsl(0, 100%, 100%);
   background-color: hsl(213, 96%, 18%);
+  margin-left: auto;
 }
 #steps-buttons-wrapper button:last-child:hover {
   background-color: hsl(243, 100%, 62%);
