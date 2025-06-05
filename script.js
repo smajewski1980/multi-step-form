@@ -98,7 +98,8 @@ stepBtns.forEach((input) => {
 });
 // **********ends the code for switching steps************
 
-// ***********billing frequency slider********************
+// ***********billing frequency********************
+// slider
 const planSlider = document.getElementById("plan-slider");
 const slide = document.getElementById("slide");
 const planMonthlyText = document.getElementById("plan-monthly");
@@ -111,14 +112,41 @@ function handleBillingFrequency() {
     slide.style.right = ".3rem";
     planMonthlyText.classList.remove("slider-active");
     planYearlyText.classList.add("slider-active");
+    updatePlanCardPrices();
   } else {
     billingFrequency = "monthly";
     slide.style.right = "1.7rem";
     planYearlyText.classList.remove("slider-active");
     planMonthlyText.classList.add("slider-active");
+    updatePlanCardPrices();
   }
 }
 
 planSlider.addEventListener("click", handleBillingFrequency);
+// end slider
+// plan cards
+const plan1Price = document.getElementById("plan-span-1");
+const plan2Price = document.getElementById("plan-span-2");
+const plan3Price = document.getElementById("plan-span-3");
+const twoFreeSpans = document.getElementsByClassName("two-free");
 
-// ********** end the billing frequency slider*****************
+function updatePlanCardPrices() {
+  const monthlyPricing = ["$9/mo", "$12/mo", "$15/mo"];
+  const yearlyPricing = ["$90/yr", "$120/yr", "$150/yr"];
+
+  if (billingFrequency === "monthly") {
+    plan1Price.innerText = monthlyPricing[0];
+    plan2Price.innerText = monthlyPricing[1];
+    plan3Price.innerText = monthlyPricing[2];
+    Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
+    return;
+  }
+
+  plan1Price.innerText = yearlyPricing[0];
+  plan2Price.innerText = yearlyPricing[1];
+  plan3Price.innerText = yearlyPricing[2];
+  // add the two free months text to the plan cards
+  Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
+}
+
+// ********** end the billing frequency*****************
