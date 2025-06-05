@@ -160,3 +160,17 @@ planCards.forEach((card) => {
 });
 
 // ********** end billing frequency*****************
+// does the same as the planCards code above
+// for the add-on cards on step three
+const addOnCards = Array.from(
+  document.getElementsByClassName("add-on-wrapper")
+);
+addOnCards.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    const input = e.target
+      .closest(".add-on-wrapper")
+      .querySelector("input[type='checkbox']");
+    const checkedStatus = input.checked;
+    input.checked = !checkedStatus;
+  });
+});
