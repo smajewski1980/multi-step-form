@@ -124,7 +124,7 @@ function handleBillingFrequency() {
 
 planSlider.addEventListener("click", handleBillingFrequency);
 // end slider
-// plan cards
+// update the plan cards
 const plan1Price = document.getElementById("plan-span-1");
 const plan2Price = document.getElementById("plan-span-2");
 const plan3Price = document.getElementById("plan-span-3");
@@ -138,6 +138,7 @@ function updatePlanCardPrices() {
     plan1Price.innerText = monthlyPricing[0];
     plan2Price.innerText = monthlyPricing[1];
     plan3Price.innerText = monthlyPricing[2];
+    // remove the two free months text to the plan cards
     Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
     return;
   }
@@ -149,4 +150,13 @@ function updatePlanCardPrices() {
   Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
 }
 
-// ********** end the billing frequency*****************
+// this lets you click anywhere in the card to make that selection "checked"
+const planCards = Array.from(document.getElementsByClassName("plan-card"));
+planCards.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    const input = e.target.querySelector("input[type='radio']");
+    input.checked = true;
+  });
+});
+
+// ********** end billing frequency*****************
