@@ -14,7 +14,7 @@
 
     <title>Frontend Mentor | Multi-step form</title>
     <link rel="stylesheet" href="./styles/main.css" />
-
+    <script src="./script.js" defer></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -34,6 +34,7 @@
             type="radio"
             name="step-num"
             id="radio-step-one"
+            data-step="1"
             value="step-one"
           />
           <label for="radio-step-one">1</label>
@@ -46,6 +47,7 @@
             type="radio"
             name="step-num"
             id="radio-step-two"
+            data-step="2"
             value="step-two"
           />
           <label for="radio-step-two">2</label>
@@ -58,6 +60,7 @@
             type="radio"
             name="step-num"
             id="radio-step-three"
+            data-step="3"
             value="step-three"
           />
           <label for="radio-step-three">3</label>
@@ -70,6 +73,7 @@
             type="radio"
             name="step-num"
             id="radio-step-four"
+            data-step="4"
             value="step-four"
           />
           <label for="radio-step-four">4</label>
@@ -250,8 +254,8 @@
       </div>
 
       <div id="steps-buttons-wrapper">
-        <button>Go Back</button>
-        <button>Next Step</button>
+        <button id="btn-back">Go Back</button>
+        <button id="btn-next">Next Step</button>
       </div>
     </main>
 
