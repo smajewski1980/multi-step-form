@@ -32,7 +32,9 @@ class SignUpObj {
     this.addOns = [];
   }
 
-  generateSummary() {}
+  generateSummary() {
+    console.log("i know what the fuck im doing");
+  }
 }
 
 const signUpObj = new SignUpObj();
@@ -76,8 +78,9 @@ const emptyFieldWarning = document.getElementById("step-one-warning");
 function handleUpdateCurrent(e) {
   const newCurrent = parseInt(e.target.dataset.step);
   currentStep = newCurrent;
+  if (currentStep === 4) signUpObj.generateSummary();
   updateUI();
-  signUpObj[billFreq] = billingFrequency;
+  signUpObj.billFreq = billingFrequency;
 }
 
 function decrementCurrent() {
@@ -92,10 +95,11 @@ function decrementCurrent() {
 function incrementCurrent() {
   if (stepOneFieldsComplete()) {
     currentStep < 4 && currentStep++;
+    if (currentStep === 4) signUpObj.generateSummary();
     updateCurrentStepBtn();
     updateUI();
     document.querySelector("aside").style.pointerEvents = "auto";
-    console.log(signUpObj);
+    // console.log(signUpObj);
     return;
   }
   emptyFieldWarning.style.display = "block";
@@ -228,6 +232,7 @@ addOnCards.forEach((card) => {
     const checkedStatus = input.checked;
     input.checked = !checkedStatus;
 
+    // this adds/removes the add-on to/from the signUpObj
     const addOn = input.value;
     const alreadyHasIt = signUpObj.addOns.includes(addOn);
     if (!alreadyHasIt) {
@@ -270,7 +275,7 @@ function handleChangePlanLink() {
 
 changePlanLink.addEventListener("click", handleChangePlanLink);
 
-// need to handle the button when step 4 is displayed
+//handle the button when step 4 is displayed
 function updateBtnConfirm() {
   btnNext.innerText = "Confirm";
   btnNext.style.backgroundColor = "hsl(243, 100%, 62%)";
