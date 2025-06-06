@@ -28,7 +28,7 @@ class SignUpObj {
     this.email = "";
     this.phone = "";
     this.plan = "";
-    this.billFreq = "";
+    this.billFreq = "monthly";
     this.addOns = [];
   }
 
@@ -162,7 +162,7 @@ function handleBillingFrequency() {
     planYearlyText.classList.add("slider-active");
     updatePlanCardPrices();
     updateAddOnPrices();
-    signUpObj[billFreq] = "yearly";
+    signUpObj.billFreq = "yearly";
   } else {
     billingFrequency = "monthly";
     slide.style.right = "1.125rem";
@@ -170,7 +170,7 @@ function handleBillingFrequency() {
     planMonthlyText.classList.add("slider-active");
     updatePlanCardPrices();
     updateAddOnPrices();
-    signUpObj[billFreq] = "monthly";
+    signUpObj.billFreq = "monthly";
   }
 }
 
@@ -208,6 +208,8 @@ planCards.forEach((card) => {
   card.addEventListener("click", (e) => {
     const input = e.target.querySelector("input[type='radio']");
     input.checked = true;
+    const planName = input.value;
+    signUpObj.plan = planName;
   });
 });
 
@@ -225,6 +227,15 @@ addOnCards.forEach((card) => {
       .querySelector("input[type='checkbox']");
     const checkedStatus = input.checked;
     input.checked = !checkedStatus;
+
+    const addOn = input.value;
+    const alreadyHasIt = signUpObj.addOns.includes(addOn);
+    if (!alreadyHasIt) {
+      signUpObj.addOns.push(addOn);
+    } else {
+      const idx = signUpObj.addOns.indexOf(addOn);
+      signUpObj.addOns.splice(idx, 1);
+    }
   });
 });
 
