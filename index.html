@@ -132,7 +132,12 @@
           <div class="plan-card-wrapper">
             <div class="plan-card">
               <img src="./assets/images/icon-arcade.svg" alt="arcade plan" />
-              <input type="radio" name="plan" id="plan-arcade" value="arcade" />
+              <input
+                type="radio"
+                name="plan"
+                id="plan-arcade"
+                value="Arcade plan"
+              />
               <label for="plan-arcade"
                 ><span>Arcade</span><br />
                 <span id="plan-span-1">$9/mo</span><br />
@@ -149,7 +154,7 @@
                 type="radio"
                 name="plan"
                 id="plan-advanced"
-                value="advanced"
+                value="Advanced plan"
               />
               <label for="plan-advanced">
                 <span>Advanced</span><br />
@@ -160,7 +165,7 @@
 
             <div class="plan-card">
               <img src="./assets/images/icon-pro.svg" alt="pro plan" />
-              <input type="radio" name="plan" id="plan-pro" value="pro" />
+              <input type="radio" name="plan" id="plan-pro" value="Pro plan" />
               <label for="plan-pro"
                 ><span>Pro</span><br />
                 <span id="plan-span-3">$15/mo</span><br />
@@ -190,7 +195,7 @@
                 type="checkbox"
                 name="addon"
                 id="add-on-one"
-                value="Online service"
+                value="online-service"
                 onClick="this.checked=!this.checked;"
               />
               <div class="add-on-text-wrapper">
@@ -205,7 +210,7 @@
                 type="checkbox"
                 name="addon"
                 id="add-on-two"
-                value="Larger storage"
+                value="larger-storage"
                 onClick="this.checked=!this.checked;"
               />
               <div class="add-on-text-wrapper">
@@ -220,7 +225,7 @@
                 type="checkbox"
                 name="addon"
                 id="add-on-three"
-                value="Customizable profile"
+                value="customizable-profile"
                 onClick="this.checked=!this.checked;"
               />
               <div class="add-on-text-wrapper">
@@ -241,25 +246,51 @@
           <div class="summary-content-wrapper">
             <div class="summary-plan-wrapper">
               <div class="summary-plan-left-col">
-                <p>plan name here</p>
+                <p id="summary-plan-name">plan name here</p>
                 <p id="jump-to-plans"><u>change</u></p>
               </div>
-              <p>$x/mo</p>
+              <p id="summary-plan-price">$x/mo</p>
             </div>
 
-            <div class="summary-plan-wrapper">
-              <p>x add-on x</p>
-              <p>+$x/mo</p>
+            <div
+              class="summary-add-on-wrapper"
+              id="summary-add-on-online-service"
+            >
+              <div class="summary-text-wrapper">
+                <p>Online Service</p>
+              </div>
+              <div class="price">
+                +$<span id="summary-span-online">1/mo</span>
+              </div>
             </div>
 
-            <div class="summary-plan-wrapper">
-              <p>x add-on x</p>
-              <p>+$x/mo</p>
+            <div
+              class="summary-add-on-wrapper"
+              id="summary-add-on-larger-storage"
+            >
+              <div class="summary-text-wrapper">
+                <p>Larger storage</p>
+              </div>
+              <div class="price">
+                +$<span id="summary-span-storage">2/mo</span>
+              </div>
+            </div>
+
+            <div
+              class="summary-add-on-wrapper"
+              id="summary-add-on-customizable-profile"
+            >
+              <div class="summary-text-wrapper">
+                <p>Customizable profile</p>
+              </div>
+              <div class="price">
+                +$<span id="summary-span-customizable">2/mo</span>
+              </div>
             </div>
 
             <div id="summary-price" class="summary-plan-wrapper">
               <p>Total (per month/year)</p>
-              <p>+$xx/mo</p>
+              <p id="summary-total">+$xx/mo</p>
             </div>
           </div>
         </div>

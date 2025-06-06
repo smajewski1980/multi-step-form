@@ -22,6 +22,22 @@ const stepWrappers = [
   stepFourWrapper,
 ];
 
+const summaryPlanName = document.getElementById("summary-plan-name");
+const summaryPlanPrice = document.getElementById("summary-plan-price");
+const summaryTotal = document.getElementById("summary-total");
+
+const monthly = {
+  "Arcade plan": "$9/mo",
+  "Advanced plan": "$12/mo",
+  "Pro plan": "$15/mo",
+};
+
+const yearly = {
+  "Arcade plan": "$90/yr",
+  "Advanced plan": "$120/yr",
+  "Pro plan": "$150/yr",
+};
+
 class SignUpObj {
   constructor() {
     this.name = "";
@@ -33,8 +49,31 @@ class SignUpObj {
   }
 
   generateSummary() {
-    console.log("i know what the fuck im doing");
+    const summaryAddOns = Array.from(
+      document.getElementsByClassName("summary-add-on-wrapper")
+    );
+    summaryAddOns.forEach((addOn) => {
+      addOn.style.display = "none";
+    });
+
+    this.addOns.forEach((addOn) => {
+      document.getElementById(`summary-add-on-${addOn}`).style.display = "flex";
+    });
+
+    summaryPlanName.innerText = this.plan;
+
+    let planPrice;
+    switch (this.billFreq) {
+      case "monthly":
+        planPrice = monthly[this.plan];
+        break;
+      case "yearly":
+        planPrice = yearly[this.plan];
+        break;
+    }
+    summaryPlanPrice.innerText = planPrice;
   }
+  generateSummaryTotal() {}
 }
 
 const signUpObj = new SignUpObj();
@@ -187,21 +226,18 @@ const plan3Price = document.getElementById("plan-span-3");
 const twoFreeSpans = document.getElementsByClassName("two-free");
 
 function updatePlanCardPrices() {
-  const monthlyPricing = ["$9/mo", "$12/mo", "$15/mo"];
-  const yearlyPricing = ["$90/yr", "$120/yr", "$150/yr"];
-
   if (billingFrequency === "monthly") {
-    plan1Price.innerText = monthlyPricing[0];
-    plan2Price.innerText = monthlyPricing[1];
-    plan3Price.innerText = monthlyPricing[2];
+    plan1Price.innerText = monthly["Arcade plan"];
+    plan2Price.innerText = monthly["Advanced plan"];
+    plan3Price.innerText = monthly["Pro plan"];
     // remove the two free months text to the plan cards
     Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
     return;
   }
 
-  plan1Price.innerText = yearlyPricing[0];
-  plan2Price.innerText = yearlyPricing[1];
-  plan3Price.innerText = yearlyPricing[2];
+  plan1Price.innerText = yearly["Arcade plan"];
+  plan2Price.innerText = yearly["Advanced plan"];
+  plan3Price.innerText = yearly["Pro plan"];
   // add the two free months text to the plan cards
   Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
 }

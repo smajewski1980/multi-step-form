@@ -8,12 +8,12 @@
     margin-top: 2rem;
     color: $clr-grey-500;
 
-    .summary-plan-wrapper p:last-child:not(.summary-plan-left-col p),
-    .summary-plan-left-col p:first-child {
+    #summary-plan-name {
       color: $clr-blue-950;
     }
 
-    .summary-plan-wrapper {
+    .summary-plan-wrapper,
+    .summary-add-on-wrapper {
       align-items: center;
       display: flex;
       justify-content: space-between;
@@ -41,8 +41,18 @@
           }
         }
       }
-    }
 
+      .summary-text-wrapper {
+        color: $clr-grey-500;
+      }
+
+      .price {
+        color: $clr-blue-950;
+      }
+    }
+    .summary-add-on-wrapper {
+      padding: 0.75rem;
+    }
     #summary-price {
       padding-block: 1.25rem;
 
@@ -51,6 +61,12 @@
         font-size: 1.25rem;
         font-weight: t.$font-bold;
       }
+    }
+
+    #summary-add-on-online-service,
+    #summary-add-on-larger-storage,
+    #summary-add-on-customizable-profile {
+      display: none;
     }
   }
 }
