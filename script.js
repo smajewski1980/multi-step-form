@@ -105,6 +105,8 @@ function updateUI() {
   clearSteps();
   const currWrapper = getStepWrapper();
   currWrapper.style.display = "block";
+  currentStep === 4 && updateBtnConfirm();
+  currentStep <= 3 && resetBtnConfirm();
 }
 
 btnGoBack.addEventListener("click", decrementCurrent);
@@ -225,4 +227,26 @@ function handleChangePlanLink() {
 }
 
 changePlanLink.addEventListener("click", handleChangePlanLink);
+
 // need to handle the button when step 4 is displayed
+function updateBtnConfirm() {
+  btnNext.innerText = "Confirm";
+  btnNext.style.backgroundColor = "hsl(243, 100%, 62%)";
+  btnNext.addEventListener("mouseover", handleBtnConfirmHover);
+  btnNext.addEventListener("mouseout", handleBtnConfirmHoverReset);
+}
+
+function handleBtnConfirmHover() {
+  btnNext.style.backgroundColor = "hsl(228, 37.40%, 71.20%)";
+}
+
+function handleBtnConfirmHoverReset() {
+  btnNext.style.backgroundColor = "hsl(243, 100%, 62%)";
+}
+
+function resetBtnConfirm() {
+  btnNext.innerText = "Next Step";
+  btnNext.removeAttribute("style");
+  btnNext.removeEventListener("mouseover", handleBtnConfirmHover);
+  btnNext.removeEventListener("mouseout", handleBtnConfirmHoverReset);
+}

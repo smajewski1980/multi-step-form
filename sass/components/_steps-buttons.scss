@@ -32,6 +32,8 @@
     color: $clr-white;
     background-color: $clr-blue-950;
     margin-left: auto;
+    width: 128px;
+    text-wrap: nowrap;
 
     &:hover {
       background-color: $clr-purple-600;
