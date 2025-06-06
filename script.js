@@ -38,6 +38,18 @@ const stepOneName = document.getElementById("name");
 const stepOneEmail = document.getElementById("email");
 const stepOnePhone = document.getElementById("phone");
 
+const persInfoArr = [stepOneName, stepOneEmail, stepOnePhone];
+
+function handleInfoFieldChange(e) {
+  if (e.target.value === "") {
+    document.querySelector("aside").style.pointerEvents = "none";
+  }
+}
+
+persInfoArr.forEach((field) => {
+  field.addEventListener("change", handleInfoFieldChange);
+});
+
 // **********starts the code for switching steps*******************
 // clear out current step
 function clearSteps() {
@@ -59,7 +71,7 @@ function getStepWrapper() {
   return stepWrappers.filter((w) => w.id === getStepIdString())[0];
 }
 
-function checkStepOneForEmptyFields() {
+function stepOneFieldsComplete() {
   return stepOneName.value && stepOneEmail.value && stepOnePhone.value
     ? true
     : false;
@@ -67,27 +79,31 @@ function checkStepOneForEmptyFields() {
 
 // sets the new current step
 function handleUpdateCurrent(e) {
-  if (checkStepOneForEmptyFields()) {
-    const newCurrent = parseInt(e.target.dataset.step);
-    currentStep = newCurrent;
-    updateUI();
+  document.querySelector("aside").style.pointerEvents = "none";
+  if (!stepOneFieldsComplete()) {
+    return;
   }
+  document.querySelector("aside").style.pointerEvents = "auto";
+  const newCurrent = parseInt(e.target.dataset.step);
+  currentStep = newCurrent;
+  updateUI();
 }
 
 function decrementCurrent() {
-  if (checkStepOneForEmptyFields()) {
+  if (stepOneFieldsComplete()) {
     currentStep--;
     updateCurrentStepBtn();
     updateUI();
+    document.querySelector("aside").style.pointerEvents = "auto";
   }
 }
 
 function incrementCurrent() {
-  if (checkStepOneForEmptyFields()) {
+  if (stepOneFieldsComplete()) {
     currentStep < 4 && currentStep++;
-    console.log(checkStepOneForEmptyFields());
     updateCurrentStepBtn();
     updateUI();
+    document.querySelector("aside").style.pointerEvents = "auto";
   }
 }
 
