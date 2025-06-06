@@ -28,27 +28,18 @@ class SignUpObj {
     this.email = "";
     this.phone = "";
     this.plan = "";
+    this.billFreq = "";
     this.addOns = [];
   }
 
   generateSummary() {}
 }
 
+const signUpObj = new SignUpObj();
+
 const stepOneName = document.getElementById("name");
 const stepOneEmail = document.getElementById("email");
 const stepOnePhone = document.getElementById("phone");
-
-const persInfoArr = [stepOneName, stepOneEmail, stepOnePhone];
-
-function handleInfoFieldChange(e) {
-  if (e.target.value === "") {
-    document.querySelector("aside").style.pointerEvents = "none";
-  }
-}
-
-persInfoArr.forEach((field) => {
-  field.addEventListener("change", handleInfoFieldChange);
-});
 
 // **********starts the code for switching steps*******************
 // clear out current step
@@ -72,21 +63,21 @@ function getStepWrapper() {
 }
 
 function stepOneFieldsComplete() {
-  return stepOneName.value && stepOneEmail.value && stepOnePhone.value
+  return stepOneName.validity.valid &&
+    stepOneEmail.validity.valid &&
+    stepOnePhone.validity.valid
     ? true
     : false;
 }
 
 // sets the new current step
+const emptyFieldWarning = document.getElementById("step-one-warning");
+
 function handleUpdateCurrent(e) {
-  document.querySelector("aside").style.pointerEvents = "none";
-  if (!stepOneFieldsComplete()) {
-    return;
-  }
-  document.querySelector("aside").style.pointerEvents = "auto";
   const newCurrent = parseInt(e.target.dataset.step);
   currentStep = newCurrent;
   updateUI();
+  signUpObj[billFreq] = billingFrequency;
 }
 
 function decrementCurrent() {
@@ -104,7 +95,10 @@ function incrementCurrent() {
     updateCurrentStepBtn();
     updateUI();
     document.querySelector("aside").style.pointerEvents = "auto";
+    console.log(signUpObj);
+    return;
   }
+  emptyFieldWarning.style.display = "block";
 }
 
 // get the id to use for the current step wrapper to be displayed
@@ -113,6 +107,25 @@ function getStepIdString() {
   const stepIdString = checkedBtn[0].value;
   return stepIdString;
 }
+
+// this resets the buttons to inactive if there is an empty field
+const persInfoArr = [stepOneName, stepOneEmail, stepOnePhone];
+
+function handleInfoFieldChange(e) {
+  emptyFieldWarning.style.display = "none";
+  const field = e.target;
+  const value = field.value;
+  const fieldName = field.name;
+  signUpObj[fieldName] = value;
+
+  if (e.target.value === "") {
+    document.querySelector("aside").style.pointerEvents = "none";
+  }
+}
+
+persInfoArr.forEach((field) => {
+  field.addEventListener("input", handleInfoFieldChange);
+});
 
 function updateUI() {
   currentStep === 1
@@ -149,6 +162,7 @@ function handleBillingFrequency() {
     planYearlyText.classList.add("slider-active");
     updatePlanCardPrices();
     updateAddOnPrices();
+    signUpObj[billFreq] = "yearly";
   } else {
     billingFrequency = "monthly";
     slide.style.right = "1.125rem";
@@ -156,6 +170,7 @@ function handleBillingFrequency() {
     planMonthlyText.classList.add("slider-active");
     updatePlanCardPrices();
     updateAddOnPrices();
+    signUpObj[billFreq] = "monthly";
   }
 }
 

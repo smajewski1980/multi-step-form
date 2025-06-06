@@ -80,6 +80,12 @@ main .step h2 {
 #step-one form input:invalid {
   border-color: red;
 }
+#step-one form input:required:valid #step-one-warning {
+  display: none;
+}
+#step-one form input:invalid #step-one-warning {
+  display: block;
+}
 #step-one form .form-group {
   display: grid;
   gap: 0.3rem;
@@ -326,6 +332,15 @@ aside .radio-wrapper label:nth-of-type(2) {
   justify-content: space-between;
   padding-inline-end: 4rem;
   padding-bottom: 0.75rem;
+  position: relative;
+}
+#steps-buttons-wrapper #step-one-warning {
+  color: red;
+  display: none;
+  font-weight: 700;
+  position: absolute;
+  right: 4rem;
+  top: -65%;
 }
 #steps-buttons-wrapper button {
   border-radius: 7px;

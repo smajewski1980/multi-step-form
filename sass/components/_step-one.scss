@@ -21,6 +21,14 @@
       border-color: $clr-stop;
     }
 
+    input:required:valid #step-one-warning {
+      display: none;
+    }
+
+    input:invalid #step-one-warning {
+      display: block;
+    }
+
     .form-group {
       display: grid;
       gap: 0.3rem;
