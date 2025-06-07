@@ -322,7 +322,7 @@ function updateAddOnPrices() {
   addOnPriceStorage.innerText = yearly["larger-storage"];
   addOnPriceCustom.innerText = yearly["customizable-profile"];
 }
-
+updateAddOnPrices();
 // step four summary jump back to the plans with the link
 const changePlanLink = document.getElementById("jump-to-plans");
 
