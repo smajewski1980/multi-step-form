@@ -25,17 +25,28 @@ const stepWrappers = [
 const summaryPlanName = document.getElementById("summary-plan-name");
 const summaryPlanPrice = document.getElementById("summary-plan-price");
 const summaryTotal = document.getElementById("summary-total");
+const addOnSpanOnline = document.getElementById("add-on-span-online-service");
+const addOnSpanStorage = document.getElementById("add-on-span-larger-storage");
+const addOnSpanCustom = document.getElementById(
+  "add-on-span-customizable-profile"
+);
 
 const monthly = {
   "Arcade plan": "$9/mo",
   "Advanced plan": "$12/mo",
   "Pro plan": "$15/mo",
+  "online-service": "1/mo",
+  "larger-storage": "2/mo",
+  "customizable-profile": "2/mo",
 };
 
 const yearly = {
   "Arcade plan": "$90/yr",
   "Advanced plan": "$120/yr",
   "Pro plan": "$150/yr",
+  "online-service": "10/yr",
+  "larger-storage": "20/yr",
+  "customizable-profile": "20/yr",
 };
 
 class SignUpObj {
@@ -57,6 +68,17 @@ class SignUpObj {
     });
 
     this.addOns.forEach((addOn) => {
+      let addOnPrice;
+      switch (this.billFreq) {
+        case "monthly":
+          addOnPrice = monthly[addOn];
+          break;
+        case "yearly":
+          addOnPrice = yearly[addOn];
+          break;
+      }
+
+      document.getElementById(`summary-span-${addOn}`).innerText = addOnPrice;
       document.getElementById(`summary-add-on-${addOn}`).style.display = "flex";
     });
 
@@ -246,7 +268,9 @@ function updatePlanCardPrices() {
 const planCards = Array.from(document.getElementsByClassName("plan-card"));
 planCards.forEach((card) => {
   card.addEventListener("click", (e) => {
-    const input = e.target.querySelector("input[type='radio']");
+    const input = e.target
+      .closest(".plan-card")
+      .querySelector("input[type='radio']");
     input.checked = true;
     const planName = input.value;
     signUpObj.plan = planName;
@@ -280,24 +304,23 @@ addOnCards.forEach((card) => {
   });
 });
 
-const addOnPriceOne = document.getElementById("add-on-span-one");
-const addOnPriceTwo = document.getElementById("add-on-span-two");
-const addOnPriceThree = document.getElementById("add-on-span-three");
+const addOnPriceOnline = document.getElementById("add-on-span-online-service");
+const addOnPriceStorage = document.getElementById("add-on-span-larger-storage");
+const addOnPriceCustom = document.getElementById(
+  "add-on-span-customizable-profile"
+);
 
 function updateAddOnPrices() {
-  const monthlyPricing = ["1/mo", "2/mo", "2/mo"];
-  const yearlyPricing = ["10/yr", "20/yr", "20/yr"];
-
   if (billingFrequency === "monthly") {
-    addOnPriceOne.innerText = monthlyPricing[0];
-    addOnPriceTwo.innerText = monthlyPricing[1];
-    addOnPriceThree.innerText = monthlyPricing[2];
+    addOnPriceOnline.innerText = monthly["online-service"];
+    addOnPriceStorage.innerText = monthly["larger-storage"];
+    addOnPriceCustom.innerText = monthly["customizable-profile"];
     return;
   }
 
-  addOnPriceOne.innerText = yearlyPricing[0];
-  addOnPriceTwo.innerText = yearlyPricing[1];
-  addOnPriceThree.innerText = yearlyPricing[2];
+  addOnPriceOnline.innerText = yearly["online-service"];
+  addOnPriceStorage.innerText = yearly["larger-storage"];
+  addOnPriceCustom.innerText = yearly["customizable-profile"];
 }
 
 // step four summary jump back to the plans with the link
