@@ -25,6 +25,9 @@ const stepWrappers = [
 const summaryPlanName = document.getElementById("summary-plan-name");
 const summaryPlanPrice = document.getElementById("summary-plan-price");
 const summaryTotal = document.getElementById("summary-total");
+const summaryTotalBillFreq = document.getElementById(
+  "summary-total-billing-freq"
+);
 const addOnSpanOnline = document.getElementById("add-on-span-online-service");
 const addOnSpanStorage = document.getElementById("add-on-span-larger-storage");
 const addOnSpanCustom = document.getElementById(
@@ -94,8 +97,13 @@ class SignUpObj {
         break;
     }
     summaryPlanPrice.innerText = planPrice;
+    summaryTotalBillFreq.innerText =
+      this.billFreq === "monthly" ? "month" : "year";
+    summaryTotal.innerText = this.generateSummaryTotal();
   }
-  generateSummaryTotal() {}
+  generateSummaryTotal() {
+    return "blah" + (this.billFreq === "monthly" ? "/mo" : "/yr");
+  }
 }
 
 const signUpObj = new SignUpObj();
