@@ -36,20 +36,32 @@ const addOnSpanCustom = document.getElementById(
 
 const monthly = {
   "Arcade plan": "$9/mo",
+  arcade: 9,
   "Advanced plan": "$12/mo",
+  advanced: 12,
   "Pro plan": "$15/mo",
+  pro: 15,
   "online-service": "1/mo",
+  online: 1,
   "larger-storage": "2/mo",
+  larger: 2,
   "customizable-profile": "2/mo",
+  customizable: 2,
 };
 
 const yearly = {
   "Arcade plan": "$90/yr",
+  arcade: 90,
   "Advanced plan": "$120/yr",
+  advanced: 120,
   "Pro plan": "$150/yr",
+  pro: 150,
   "online-service": "10/yr",
+  online: 10,
   "larger-storage": "20/yr",
+  larger: 20,
   "customizable-profile": "20/yr",
+  customizable: 20,
 };
 
 class SignUpObj {
@@ -60,9 +72,12 @@ class SignUpObj {
     this.plan = "";
     this.billFreq = "monthly";
     this.addOns = [];
+    this.total = 0;
   }
 
   generateSummary() {
+    this.total = 0;
+
     const summaryAddOns = Array.from(
       document.getElementsByClassName("summary-add-on-wrapper")
     );
@@ -75,9 +90,11 @@ class SignUpObj {
       switch (this.billFreq) {
         case "monthly":
           addOnPrice = monthly[addOn];
+          this.total += monthly[addOn.split("-")[0]];
           break;
         case "yearly":
           addOnPrice = yearly[addOn];
+          this.total += yearly[addOn.split("-")[0]];
           break;
       }
 
@@ -91,9 +108,11 @@ class SignUpObj {
     switch (this.billFreq) {
       case "monthly":
         planPrice = monthly[this.plan];
+        this.total += monthly[this.plan.split(" ")[0].toLowerCase()];
         break;
       case "yearly":
         planPrice = yearly[this.plan];
+        this.total += yearly[this.plan.split(" ")[0].toLowerCase()];
         break;
     }
     summaryPlanPrice.innerText = planPrice;
@@ -102,7 +121,7 @@ class SignUpObj {
     summaryTotal.innerText = this.generateSummaryTotal();
   }
   generateSummaryTotal() {
-    return "blah" + (this.billFreq === "monthly" ? "/mo" : "/yr");
+    return this.total + (this.billFreq === "monthly" ? "/mo" : "/yr");
   }
 }
 
