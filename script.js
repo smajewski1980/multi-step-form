@@ -36,33 +36,21 @@ const addOnSpanCustom = document.getElementById(
 );
 
 const monthly = {
-  "Arcade plan": "$9/mo",
-  arcade: 9,
-  "Advanced plan": "$12/mo",
-  advanced: 12,
-  "Pro plan": "$15/mo",
-  pro: 15,
-  "online-service": "1/mo",
-  online: 1,
-  "larger-storage": "2/mo",
-  larger: 2,
-  "customizable-profile": "2/mo",
-  customizable: 2,
+  "Arcade plan": ["$9/mo", 9],
+  "Advanced plan": ["$12/mo", 12],
+  "Pro plan": ["$15/mo", 15],
+  "online-service": ["1/mo", 1],
+  "larger-storage": ["2/mo", 2],
+  "customizable-profile": ["2/mo", 2],
 };
 
 const yearly = {
-  "Arcade plan": "$90/yr",
-  arcade: 90,
-  "Advanced plan": "$120/yr",
-  advanced: 120,
-  "Pro plan": "$150/yr",
-  pro: 150,
-  "online-service": "10/yr",
-  online: 10,
-  "larger-storage": "20/yr",
-  larger: 20,
-  "customizable-profile": "20/yr",
-  customizable: 20,
+  "Arcade plan": ["$90/yr", 90],
+  "Advanced plan": ["$120/yr", 120],
+  "Pro plan": ["$150/yr", 150],
+  "online-service": ["10/yr", 10],
+  "larger-storage": ["20/yr", 20],
+  "customizable-profile": ["20/yr", 20],
 };
 
 class SignUpObj {
@@ -90,12 +78,12 @@ class SignUpObj {
       let addOnPrice;
       switch (this.billFreq) {
         case "monthly":
-          addOnPrice = monthly[addOn];
-          this.total += monthly[addOn.split("-")[0]];
+          addOnPrice = monthly[addOn][0];
+          this.total += monthly[addOn][1];
           break;
         case "yearly":
-          addOnPrice = yearly[addOn];
-          this.total += yearly[addOn.split("-")[0]];
+          addOnPrice = yearly[addOn][0];
+          this.total += yearly[addOn][1];
           break;
       }
 
@@ -108,12 +96,12 @@ class SignUpObj {
     let planPrice;
     switch (this.billFreq) {
       case "monthly":
-        planPrice = monthly[this.plan];
-        this.total += monthly[this.plan.split(" ")[0].toLowerCase()];
+        planPrice = monthly[this.plan][0];
+        this.total += monthly[this.plan][1];
         break;
       case "yearly":
-        planPrice = yearly[this.plan];
-        this.total += yearly[this.plan.split(" ")[0].toLowerCase()];
+        planPrice = yearly[this.plan][0];
+        this.total += yearly[this.plan][1];
         break;
     }
     summaryPlanPrice.innerText = planPrice;
@@ -298,17 +286,17 @@ const twoFreeSpans = document.getElementsByClassName("two-free");
 
 function updatePlanCardPrices() {
   if (billingFrequency === "monthly") {
-    plan1Price.innerText = monthly["Arcade plan"];
-    plan2Price.innerText = monthly["Advanced plan"];
-    plan3Price.innerText = monthly["Pro plan"];
+    plan1Price.innerText = monthly["Arcade plan"][0];
+    plan2Price.innerText = monthly["Advanced plan"][0];
+    plan3Price.innerText = monthly["Pro plan"][0];
     // remove the two free months text to the plan cards
     Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
     return;
   }
 
-  plan1Price.innerText = yearly["Arcade plan"];
-  plan2Price.innerText = yearly["Advanced plan"];
-  plan3Price.innerText = yearly["Pro plan"];
+  plan1Price.innerText = yearly["Arcade plan"][0];
+  plan2Price.innerText = yearly["Advanced plan"][0];
+  plan3Price.innerText = yearly["Pro plan"][0];
   // add the two free months text to the plan cards
   Array.from(twoFreeSpans).forEach((span) => span.classList.toggle("hide"));
 }
@@ -361,15 +349,15 @@ const addOnPriceCustom = document.getElementById(
 
 function updateAddOnPrices() {
   if (billingFrequency === "monthly") {
-    addOnPriceOnline.innerText = monthly["online-service"];
-    addOnPriceStorage.innerText = monthly["larger-storage"];
-    addOnPriceCustom.innerText = monthly["customizable-profile"];
+    addOnPriceOnline.innerText = monthly["online-service"][0];
+    addOnPriceStorage.innerText = monthly["larger-storage"][0];
+    addOnPriceCustom.innerText = monthly["customizable-profile"][0];
     return;
   }
 
-  addOnPriceOnline.innerText = yearly["online-service"];
-  addOnPriceStorage.innerText = yearly["larger-storage"];
-  addOnPriceCustom.innerText = yearly["customizable-profile"];
+  addOnPriceOnline.innerText = yearly["online-service"][1];
+  addOnPriceStorage.innerText = yearly["larger-storage"][1];
+  addOnPriceCustom.innerText = yearly["customizable-profile"][1];
 }
 updateAddOnPrices();
 // step four summary jump back to the plans with the link
