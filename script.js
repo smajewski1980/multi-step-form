@@ -187,7 +187,8 @@ function incrementCurrent() {
     currentStep < 5 && currentStep++;
     if (currentStep === 4) signUpObj.generateSummary();
     if (currentStep === 5) {
-      btnsWrapper.style.display = "none";
+      btnsWrapper.style.visibility = "hidden";
+      btnsWrapper.style.pointerEvents = "none";
       clearSteps();
       document.querySelector("aside").style.pointerEvents = "none";
       stepFiveWrapper.style.display = "grid";
