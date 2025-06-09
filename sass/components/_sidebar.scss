@@ -19,10 +19,11 @@ aside {
     grid-column: 1 / -1;
     background-size: cover;
     background-image: url("../../assets/images/bg-sidebar-mobile.svg");
-
     display: flex;
     justify-content: center;
     align-items: start;
+    gap: 0.25rem;
+    padding-inline-start: 1.5rem;
   }
 
   input[type="radio"] {
@@ -57,7 +58,7 @@ aside {
       place-items: center;
 
       @include mq.media-sm {
-        width: 35px;
+        width: 45px;
       }
     }
 

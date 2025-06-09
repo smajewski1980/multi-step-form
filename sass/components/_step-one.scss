@@ -9,8 +9,25 @@
     max-width: 100dvw;
   }
 
+  h2 {
+    @include mq.media-sm {
+      margin-bottom: 1rem;
+    }
+  }
+
+  p {
+    @include mq.media-sm {
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+  }
+
   form {
     margin-block-start: 2rem;
+
+    @include mq.media-sm {
+      margin-block-start: 1rem;
+    }
 
     input:required:focus {
       border: 1px solid $clr-stop;
@@ -39,6 +56,11 @@
 
       label {
         font-weight: $font-bold;
+
+        @include mq.media-sm {
+          font-weight: $font-reg;
+          color: $clr-blue-950;
+        }
       }
 
       input {
@@ -46,6 +68,11 @@
         border-radius: 5px;
         border: 2px solid $clr-blue-100;
         margin-bottom: 1rem;
+
+        @include mq.media-sm {
+          padding: 0.75rem;
+          font-size: 1.125rem;
+        }
 
         &::placeholder {
           color: $clr-grey-500;

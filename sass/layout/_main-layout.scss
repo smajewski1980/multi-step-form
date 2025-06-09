@@ -33,13 +33,16 @@ main {
     min-height: 400px;
 
     @include mq.media-sm {
+      border-radius: 10px;
       min-width: initial;
-      min-height: initial;
-      grid-row: 2 / 5;
+      // min-height: initial;
+      grid-row: 2 / 6;
       grid-column: 1 / -1;
       background-color: $clr-white;
       width: 90%;
       margin-inline: auto;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      padding: 1rem 2rem;
     }
   }
 
