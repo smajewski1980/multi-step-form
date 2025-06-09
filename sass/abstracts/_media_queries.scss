@@ -1,0 +1,5 @@
+@mixin media-sm {
+  @media (width < 750px) {
+    @content;
+  }
+}

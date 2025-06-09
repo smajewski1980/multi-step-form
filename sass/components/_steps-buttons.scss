@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/media_queries" as mq;
 @use "../base/typography" as t;
 
 #steps-buttons-wrapper {
@@ -8,6 +9,12 @@
   padding-inline-end: 4rem;
   padding-bottom: 0.75rem;
   position: relative;
+
+  @include mq.media-sm {
+    width: 100dvw;
+    grid-row: 7 / 8;
+    grid-column: 1 / -1;
+  }
 
   #step-one-warning {
     color: $clr-stop;

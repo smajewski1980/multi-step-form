@@ -1,9 +1,13 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 @use "../base/typography" as *;
+@use "../abstracts/media_queries" as mq;
 
 #step-one {
   // display: none;
+  @include mq.media-sm {
+    max-width: 100dvw;
+  }
 
   form {
     margin-block-start: 2rem;

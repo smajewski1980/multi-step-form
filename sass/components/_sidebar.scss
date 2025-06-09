@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/media_queries" as mq;
 
 aside {
   background-image: url("../../assets/images/bg-sidebar-desktop.svg");
@@ -7,9 +8,22 @@ aside {
   background-size: contain;
   color: $clr-white;
   grid-row: 1 / 3;
+
   padding-block-start: 2rem;
   padding-inline-start: 2rem;
   pointer-events: none;
+
+  @include mq.media-sm {
+    width: 100dvw;
+    grid-row: 1 / 3;
+    grid-column: 1 / -1;
+    background-size: cover;
+    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
 
   input[type="radio"] {
     display: none;
@@ -41,10 +55,20 @@ aside {
       // padding: 0.1rem;
       display: grid;
       place-items: center;
+
+      @include mq.media-sm {
+        width: 35px;
+      }
     }
 
     label:nth-of-type(2) {
       color: $clr-grey-500;
+    }
+
+    label:not(input + label) {
+      @include mq.media-sm {
+        display: none;
+      }
     }
   }
 }
