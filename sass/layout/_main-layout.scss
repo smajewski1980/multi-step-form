@@ -3,7 +3,7 @@
 @use "../abstracts/media_queries" as mq;
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   background-color: $clr-blue-100;
@@ -26,6 +26,7 @@ main {
     padding: 0;
     margin: 0;
     gap: 0;
+    background-color: $clr-blue-100;
   }
 
   .steps-wrapper {
