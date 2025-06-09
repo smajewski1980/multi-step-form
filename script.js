@@ -14,6 +14,7 @@ const stepOneWrapper = document.getElementById("step-one");
 const stepTwoWrapper = document.getElementById("step-two");
 const stepThreeWrapper = document.getElementById("step-three");
 const stepFourWrapper = document.getElementById("step-four");
+const stepFiveWrapper = document.getElementById("step-five");
 
 const stepWrappers = [
   stepOneWrapper,
@@ -123,6 +124,17 @@ class SignUpObj {
   generateSummaryTotal() {
     return this.total + (this.billFreq === "monthly" ? "/mo" : "/yr");
   }
+
+  generateReqObj() {
+    return {
+      name: this.name,
+      email: this.email,
+      phone: this.phone,
+      plan: this.plan,
+      billFreq: this.billFreq,
+      addOns: this.addOns,
+    };
+  }
 }
 
 const signUpObj = new SignUpObj();
@@ -180,10 +192,20 @@ function decrementCurrent() {
   }
 }
 
+const btnsWrapper = document.getElementById("steps-buttons-wrapper");
+
 function incrementCurrent() {
   if (stepOneFieldsComplete()) {
-    currentStep < 4 && currentStep++;
+    currentStep < 5 && currentStep++;
     if (currentStep === 4) signUpObj.generateSummary();
+    if (currentStep === 5) {
+      btnsWrapper.style.display = "none";
+      clearSteps();
+      document.querySelector("aside").style.pointerEvents = "none";
+      stepFiveWrapper.style.display = "grid";
+      handleSendRequest();
+      return;
+    }
     updateCurrentStepBtn();
     updateUI();
     document.querySelector("aside").style.pointerEvents = "auto";
@@ -382,4 +404,9 @@ function resetBtnConfirm() {
   btnNext.removeAttribute("style");
   btnNext.removeEventListener("mouseover", handleBtnConfirmHover);
   btnNext.removeEventListener("mouseout", handleBtnConfirmHoverReset);
+}
+
+function handleSendRequest() {
+  const reqObj = signUpObj.generateReqObj();
+  console.log(reqObj);
 }
