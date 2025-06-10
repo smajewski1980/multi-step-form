@@ -465,11 +465,7 @@ aside .radio-wrapper label:first-of-type {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-}
-@media (width < 750px) {
-  aside .radio-wrapper label:first-of-type {
-    width: 45px;
-  }
+  width: 45px;
 }
 aside .radio-wrapper label:nth-of-type(2) {
   color: hsl(231, 11%, 63%);

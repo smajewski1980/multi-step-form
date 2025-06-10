@@ -53,13 +53,9 @@ aside {
       font-size: 1.25rem;
       outline: 1px solid $clr-grey-500;
       aspect-ratio: 1;
-      // padding: 0.1rem;
       display: grid;
       place-items: center;
-
-      @include mq.media-sm {
-        width: 45px;
-      }
+      width: 45px;
     }
 
     label:nth-of-type(2) {

@@ -131,6 +131,27 @@ const stepOneName = document.getElementById("name");
 const stepOneEmail = document.getElementById("email");
 const stepOnePhone = document.getElementById("phone");
 
+const planInputArcade = document.getElementById("plan-arcade");
+const planInputAdvanced = document.getElementById("plan-advanced");
+const planInputPro = document.getElementById("plan-pro");
+
+const planBtns = [planInputArcade, planInputAdvanced, planInputPro];
+
+const addonInputOne = document.getElementById("add-on-one");
+const addonInputTwo = document.getElementById("add-on-two");
+const addonInputThree = document.getElementById("add-on-three");
+
+const addOnBtns = [addonInputOne, addonInputTwo, addonInputThree];
+
+function uncheckRadioBtns(elemArr) {
+  elemArr.forEach((btn) => {
+    btn.checked = false;
+  });
+}
+
+uncheckRadioBtns(planBtns);
+uncheckRadioBtns(addOnBtns);
+
 // **********starts the code for switching steps*******************
 // clear out current step
 function clearSteps() {
