@@ -2,17 +2,16 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as t;
 @use "../abstracts/media_queries" as mq;
-
 #step-four {
   display: none;
+
   .summary-content-wrapper {
-    margin-top: 2rem;
     color: $clr-grey-500;
+    margin-top: 2rem;
 
     #summary-plan-name {
       color: $clr-blue-950;
     }
-
     .summary-plan-wrapper,
     .summary-add-on-wrapper,
     .summary-price-wrapper {
@@ -22,15 +21,14 @@
       padding: 0.5rem 0.7rem;
 
       &:has(.summary-plan-left-col) {
-        padding-block: 1.25rem;
         border-bottom: 1px solid $clr-grey-250;
+        padding-block: 1.25rem;
 
         p:last-child:not(.summary-plan-left-col p),
         p:first-child {
           font-weight: t.$font-bold;
         }
       }
-
       .summary-plan-left-col {
         display: grid;
         gap: 0.25rem;
@@ -43,16 +41,13 @@
           }
         }
       }
-
       .summary-text-wrapper {
         color: $clr-grey-500;
       }
-
       .price {
         color: $clr-blue-950;
       }
     }
-
     .summary-add-on-wrapper {
       padding: 0.7rem;
     }
@@ -65,7 +60,6 @@
         font-weight: t.$font-bold;
       }
     }
-
     #summary-add-on-online-services,
     #summary-add-on-larger-storage,
     #summary-add-on-customizable-profile {

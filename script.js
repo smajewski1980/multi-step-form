@@ -1,5 +1,5 @@
 let currentStep = 1;
-
+// todo: verify a plan is selected before advancing the step
 const btnGoBack = document.getElementById("btn-back");
 const btnNext = document.getElementById("btn-next");
 

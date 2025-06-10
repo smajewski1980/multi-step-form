@@ -1,24 +1,21 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/media_queries" as mq;
 @use "../base/typography" as t;
-
 #steps-buttons-wrapper {
-  // outline: 2px solid red;
   display: flex;
   justify-content: space-between;
-  padding-inline-end: 4rem;
   padding-bottom: 0.75rem;
+  padding-inline-end: 4rem;
   position: relative;
 
   @include mq.media-sm {
-    width: 100dvw;
-    grid-row: 8 / -1;
-    grid-column: 1 / -1;
     align-items: center;
     background-color: $clr-white;
+    grid-column: 1 / -1;
+    grid-row: 8 / -1;
     padding-inline: 1.5rem;
+    width: 100dvw;
   }
-
   #step-one-warning {
     color: $clr-stop;
     display: none;
@@ -27,34 +24,30 @@
     right: 4rem;
     top: -65%;
   }
-
   button {
-    border-radius: 7px;
-    padding: 1rem 1.75rem;
     border: none;
+    border-radius: 7px;
     cursor: pointer;
+    padding: 1rem 1.75rem;
   }
-
   button:first-child {
-    // visibility: hidden;
-    cursor: pointer;
-    display: none;
-    color: $clr-grey-500;
     background: transparent;
     border: none;
+    color: $clr-grey-500;
+    cursor: pointer;
+    display: none;
     padding: 0 0.5rem;
 
     &:hover {
       color: $clr-blue-950;
     }
   }
-
   button:last-child {
-    color: $clr-white;
     background-color: $clr-blue-950;
+    color: $clr-white;
     margin-left: auto;
-    width: 128px;
     text-wrap: nowrap;
+    width: 128px;
 
     &:hover {
       background-color: $clr-purple-600;

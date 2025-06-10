@@ -1,21 +1,19 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as t;
-
 #step-three {
   display: none;
   padding-block-end: 0rem;
 
   .add-ons-wrapper {
-    padding-block-start: 2.5rem;
     display: grid;
     gap: 1rem;
+    padding-block-start: 2.5rem;
 
     .add-on-wrapper:has(input[type="checkbox"]:checked) {
-      outline: 2px solid $clr-purple-600;
       background-color: $clr-blue-50;
+      outline: 2px solid $clr-purple-600;
     }
-
     .add-on-wrapper {
       align-items: center;
       border-radius: 5px;
@@ -25,16 +23,16 @@
       padding: 1rem;
 
       input {
-        cursor: pointer;
         accent-color: $clr-purple-600;
-        width: 16px;
         aspect-ratio: 1;
+        cursor: pointer;
+        width: 16px;
       }
       .add-on-text-wrapper {
-        flex: 1;
-        margin-inline-start: 1rem;
         display: grid;
+        flex: 1;
         gap: 0.25rem;
+        margin-inline-start: 1rem;
 
         p:first-child {
           font-weight: t.$font-bold;

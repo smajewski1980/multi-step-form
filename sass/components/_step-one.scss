@@ -2,54 +2,43 @@
 @use "../abstracts/variables" as *;
 @use "../base/typography" as *;
 @use "../abstracts/media_queries" as mq;
-
 #step-one {
-  // display: none;
   @include mq.media-sm {
     max-width: 100dvw;
   }
-
   h2 {
     @include mq.media-sm {
       margin-bottom: 1rem;
     }
   }
-
   p {
     @include mq.media-sm {
       font-size: 1.125rem;
       line-height: 1.5;
     }
   }
-
   form {
     margin-block-start: 2rem;
 
     @include mq.media-sm {
       margin-block-start: 1rem;
     }
-
     input:required:focus {
       border: 1px solid $clr-stop;
       outline: none;
     }
-
     input:required:valid {
       border-color: $clr-go;
     }
-
     input:invalid {
       border-color: $clr-stop;
     }
-
     input:required:valid #step-one-warning {
       display: none;
     }
-
     input:invalid #step-one-warning {
       display: block;
     }
-
     .form-group {
       display: grid;
       gap: 0.3rem;
@@ -58,22 +47,20 @@
         font-weight: $font-bold;
 
         @include mq.media-sm {
-          font-weight: $font-reg;
           color: $clr-blue-950;
+          font-weight: $font-reg;
         }
       }
-
       input {
-        padding: 0.5rem;
-        border-radius: 5px;
         border: 2px solid $clr-blue-100;
+        border-radius: 5px;
         margin-bottom: 1rem;
+        padding: 0.5rem;
 
         @include mq.media-sm {
-          padding: 0.75rem;
           font-size: 1.125rem;
+          padding: 0.75rem;
         }
-
         &::placeholder {
           color: $clr-grey-500;
         }

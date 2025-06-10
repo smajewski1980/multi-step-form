@@ -32,8 +32,8 @@ h2 {
 }
 
 .slider-active {
-  font-weight: 700;
   color: hsl(213, 96%, 18%);
+  font-weight: 700;
 }
 
 .hide {
@@ -41,10 +41,10 @@ h2 {
 }
 
 body {
-  min-height: 100dvh;
-  display: grid;
-  place-items: center;
   background-color: hsl(218, 100%, 97%);
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
 }
 
 main {
@@ -54,38 +54,38 @@ main {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 2fr;
-  max-width: 1440px;
   margin-inline: auto;
+  max-width: 1440px;
   padding: 0.75rem;
 }
 @media (width < 750px) {
   main {
+    background-color: hsl(218, 100%, 97%);
+    gap: 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(8, 12.5dvh);
-    padding: 0;
     margin: 0;
-    gap: 0;
-    background-color: hsl(218, 100%, 97%);
+    padding: 0;
   }
 }
 main .steps-wrapper {
-  min-width: 525px;
   min-height: 400px;
+  min-width: 525px;
 }
 @media (width < 750px) {
   main .steps-wrapper {
-    border-radius: 10px;
-    min-width: initial;
-    grid-row: 2/6;
-    grid-column: 1/-1;
     background-color: hsl(0, 100%, 100%);
-    width: 90%;
-    margin-inline: auto;
+    border-radius: 10px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    min-height: 475px;
+    grid-column: 1/-1;
+    grid-row: 2/6;
     height: -moz-min-content;
     height: min-content;
+    margin-inline: auto;
+    min-height: 475px;
+    min-width: initial;
+    padding: 2rem;
+    width: 90%;
   }
 }
 main .step {
@@ -98,8 +98,8 @@ main .step {
   }
 }
 main .step h2 {
-  margin-block-end: 0.5rem;
   font-size: 2rem;
+  margin-block-end: 0.5rem;
 }
 
 @media (width < 750px) {
@@ -151,20 +151,20 @@ main .step h2 {
 }
 @media (width < 750px) {
   #step-one form .form-group label {
-    font-weight: 400;
     color: hsl(213, 96%, 18%);
+    font-weight: 400;
   }
 }
 #step-one form .form-group input {
-  padding: 0.5rem;
-  border-radius: 5px;
   border: 2px solid hsl(218, 100%, 97%);
+  border-radius: 5px;
   margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 @media (width < 750px) {
   #step-one form .form-group input {
-    padding: 0.75rem;
     font-size: 1.125rem;
+    padding: 0.75rem;
   }
 }
 #step-one form .form-group input::-moz-placeholder {
@@ -179,10 +179,10 @@ main .step h2 {
 }
 #step-two .plan-card-wrapper {
   display: flex;
-  margin-block: 2rem 1rem;
-  justify-content: space-between;
-  gap: 1rem;
   flex: 1;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-block: 2rem 1rem;
 }
 @media (width < 750px) {
   #step-two .plan-card-wrapper {
@@ -192,28 +192,28 @@ main .step h2 {
 #step-two .plan-card-wrapper .plan-card {
   border-radius: 5px;
   cursor: pointer;
-  outline: 1px solid hsl(231, 11%, 63%);
   flex: 1;
-  padding: 1rem;
   margin-bottom: 1rem;
+  outline: 1px solid hsl(231, 11%, 63%);
+  padding: 1rem;
 }
 @media (width < 750px) {
   #step-two .plan-card-wrapper .plan-card {
     display: flex;
-    padding: 1rem;
     margin: 0;
+    padding: 1rem;
   }
 }
 #step-two .plan-card-wrapper .plan-card input[type=radio] {
   display: none;
 }
 #step-two .plan-card-wrapper .plan-card:has(input[type=radio]:checked) {
-  outline: 2px solid hsl(243, 100%, 62%);
   background-color: hsl(231, 100%, 99%);
+  outline: 2px solid hsl(243, 100%, 62%);
 }
 #step-two .plan-card-wrapper .plan-card img {
-  width: 45px;
   margin-bottom: 3rem;
+  width: 45px;
 }
 @media (width < 750px) {
   #step-two .plan-card-wrapper .plan-card img {
@@ -228,8 +228,8 @@ main .step h2 {
   margin-block-end: 0.35rem;
 }
 #step-two .plan-card-wrapper .plan-card label span:nth-of-type(2) {
-  display: inline-block;
   color: hsl(231, 11%, 63%);
+  display: inline-block;
   margin-block-end: 0.35rem;
 }
 #step-two .plan-card-wrapper .plan-card label span:nth-of-type(3) {
@@ -237,13 +237,13 @@ main .step h2 {
 }
 #step-two .plan-slider-wrapper {
   align-items: center;
+  background-color: hsl(218, 100%, 97%);
   border-radius: 10px;
   color: hsl(231, 11%, 63%);
   display: flex;
-  width: 100%;
   justify-content: center;
-  background-color: hsl(218, 100%, 97%);
   padding-block: 0.75rem;
+  width: 100%;
 }
 @media (width < 750px) {
   #step-two .plan-slider-wrapper {
@@ -251,21 +251,21 @@ main .step h2 {
   }
 }
 #step-two .plan-slider-wrapper #plan-slider {
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 999vw;
   cursor: pointer;
-  width: 2rem;
   height: 1rem;
   margin-inline: 1.5rem;
-  border-radius: 999vw;
-  background-color: hsl(213, 96%, 18%);
-  position: relative;
   padding: 0.125rem;
+  position: relative;
+  width: 2rem;
 }
 #step-two .plan-slider-wrapper #plan-slider #slide {
-  border-radius: 50%;
-  position: absolute;
-  height: 0.75rem;
   aspect-ratio: 1;
   background-color: hsl(0, 100%, 100%);
+  border-radius: 50%;
+  height: 0.75rem;
+  position: absolute;
   right: 1.125rem;
   transition: right 0.25s ease;
 }
@@ -275,13 +275,13 @@ main .step h2 {
   padding-block-end: 0rem;
 }
 #step-three .add-ons-wrapper {
-  padding-block-start: 2.5rem;
   display: grid;
   gap: 1rem;
+  padding-block-start: 2.5rem;
 }
 #step-three .add-ons-wrapper .add-on-wrapper:has(input[type=checkbox]:checked) {
-  outline: 2px solid hsl(243, 100%, 62%);
   background-color: hsl(231, 100%, 99%);
+  outline: 2px solid hsl(243, 100%, 62%);
 }
 #step-three .add-ons-wrapper .add-on-wrapper {
   align-items: center;
@@ -292,16 +292,16 @@ main .step h2 {
   padding: 1rem;
 }
 #step-three .add-ons-wrapper .add-on-wrapper input {
-  cursor: pointer;
   accent-color: hsl(243, 100%, 62%);
-  width: 16px;
   aspect-ratio: 1;
+  cursor: pointer;
+  width: 16px;
 }
 #step-three .add-ons-wrapper .add-on-wrapper .add-on-text-wrapper {
-  flex: 1;
-  margin-inline-start: 1rem;
   display: grid;
+  flex: 1;
   gap: 0.25rem;
+  margin-inline-start: 1rem;
 }
 #step-three .add-ons-wrapper .add-on-wrapper .add-on-text-wrapper p:first-child {
   font-weight: 700;
@@ -317,8 +317,8 @@ main .step h2 {
   display: none;
 }
 #step-four .summary-content-wrapper {
-  margin-top: 2rem;
   color: hsl(231, 11%, 63%);
+  margin-top: 2rem;
 }
 #step-four .summary-content-wrapper #summary-plan-name {
   color: hsl(213, 96%, 18%);
@@ -334,8 +334,8 @@ main .step h2 {
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col),
 #step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col),
 #step-four .summary-content-wrapper .summary-price-wrapper:has(.summary-plan-left-col) {
-  padding-block: 1.25rem;
   border-bottom: 1px solid #dddee4;
+  padding-block: 1.25rem;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col) p:last-child:not(.summary-plan-left-col p),
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col) p:first-child,
@@ -392,10 +392,10 @@ main .step h2 {
   display: none;
   gap: 0.5rem;
   grid-template-rows: 60px min-content min-content;
-  place-content: center;
+  height: 120%;
   justify-items: center;
   padding-inline-end: 3rem;
-  height: 120%;
+  place-content: center;
 }
 @media (width < 750px) {
   #step-five {
@@ -404,12 +404,12 @@ main .step h2 {
   }
 }
 #step-five img {
-  width: 50px;
   margin-bottom: 1rem;
+  width: 50px;
 }
 #step-five p {
-  max-width: 50ch;
   line-height: 1.5;
+  max-width: 50ch;
   text-align: center;
 }
 
@@ -425,30 +425,30 @@ aside {
 }
 @media (width < 750px) {
   aside {
-    width: 100dvw;
-    grid-row: 1/3;
-    grid-column: 1/-1;
-    background-size: cover;
-    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
-    display: flex;
-    justify-content: center;
     align-items: start;
+    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+    background-size: cover;
+    display: flex;
     gap: 0.25rem;
+    grid-column: 1/-1;
+    grid-row: 1/3;
+    justify-content: center;
     padding-inline-start: 1.5rem;
+    width: 100dvw;
   }
 }
 aside input[type=radio] {
   display: none;
 }
 aside .radio-wrapper {
-  width: -moz-fit-content;
-  width: fit-content;
-  display: grid;
-  grid-template-columns: min-content 2fr;
   align-content: center;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
+  display: grid;
+  grid-template-columns: min-content 2fr;
   margin-block-end: 1.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 aside .radio-wrapper input[type=radio]:checked + label {
   background-color: hsl(206, 94%, 87%);
@@ -458,12 +458,12 @@ aside .radio-wrapper label {
   cursor: pointer;
 }
 aside .radio-wrapper label:first-of-type {
-  border-radius: 50%;
-  grid-row: 1/3;
-  font-size: 1.25rem;
-  outline: 1px solid hsl(231, 11%, 63%);
   aspect-ratio: 1;
+  border-radius: 50%;
   display: grid;
+  font-size: 1.25rem;
+  grid-row: 1/3;
+  outline: 1px solid hsl(231, 11%, 63%);
   place-items: center;
   width: 45px;
 }
@@ -479,18 +479,18 @@ aside .radio-wrapper label:nth-of-type(2) {
 #steps-buttons-wrapper {
   display: flex;
   justify-content: space-between;
-  padding-inline-end: 4rem;
   padding-bottom: 0.75rem;
+  padding-inline-end: 4rem;
   position: relative;
 }
 @media (width < 750px) {
   #steps-buttons-wrapper {
-    width: 100dvw;
-    grid-row: 8/-1;
-    grid-column: 1/-1;
     align-items: center;
     background-color: hsl(0, 100%, 100%);
+    grid-column: 1/-1;
+    grid-row: 8/-1;
     padding-inline: 1.5rem;
+    width: 100dvw;
   }
 }
 #steps-buttons-wrapper #step-one-warning {
@@ -502,28 +502,28 @@ aside .radio-wrapper label:nth-of-type(2) {
   top: -65%;
 }
 #steps-buttons-wrapper button {
-  border-radius: 7px;
-  padding: 1rem 1.75rem;
   border: none;
+  border-radius: 7px;
   cursor: pointer;
+  padding: 1rem 1.75rem;
 }
 #steps-buttons-wrapper button:first-child {
-  cursor: pointer;
-  display: none;
-  color: hsl(231, 11%, 63%);
   background: transparent;
   border: none;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+  display: none;
   padding: 0 0.5rem;
 }
 #steps-buttons-wrapper button:first-child:hover {
   color: hsl(213, 96%, 18%);
 }
 #steps-buttons-wrapper button:last-child {
-  color: hsl(0, 100%, 100%);
   background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 100%, 100%);
   margin-left: auto;
-  width: 128px;
   text-wrap: nowrap;
+  width: 128px;
 }
 #steps-buttons-wrapper button:last-child:hover {
   background-color: hsl(243, 100%, 62%);

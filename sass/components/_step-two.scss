@@ -2,54 +2,48 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as t;
 @use "../abstracts/media_queries" as mq;
-
 #step-two {
   display: none;
 
   .plan-card-wrapper {
     display: flex;
-    margin-block: 2rem 1rem;
-    justify-content: space-between;
-    gap: 1rem;
     flex: 1;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-block: 2rem 1rem;
 
     @include mq.media-sm {
       flex-direction: column;
     }
-
     .plan-card {
       border-radius: 5px;
       cursor: pointer;
-      outline: 1px solid $clr-grey-500;
       flex: 1;
-      padding: 1rem;
       margin-bottom: 1rem;
+      outline: 1px solid $clr-grey-500;
+      padding: 1rem;
 
       @include mq.media-sm {
         display: flex;
-        padding: 1rem;
         margin: 0;
+        padding: 1rem;
       }
-
       input[type="radio"] {
         display: none;
       }
-
       &:has(input[type="radio"]:checked) {
-        outline: 2px solid $clr-purple-600;
         background-color: $clr-blue-50;
+        outline: 2px solid $clr-purple-600;
       }
-
       img {
-        width: 45px;
         margin-bottom: 3rem;
+        width: 45px;
 
         @include mq.media-sm {
           margin: 0;
           margin-inline-end: 1rem;
         }
       }
-
       label {
         span:nth-of-type(1) {
           color: $clr-blue-950;
@@ -58,8 +52,8 @@
           margin-block-end: 0.35rem;
         }
         span:nth-of-type(2) {
-          display: inline-block;
           color: $clr-grey-500;
+          display: inline-block;
           margin-block-end: 0.35rem;
         }
         span:nth-of-type(3) {
@@ -70,34 +64,33 @@
   }
   .plan-slider-wrapper {
     align-items: center;
+    background-color: $clr-blue-100;
     border-radius: 10px;
     color: $clr-grey-500;
     display: flex;
-    width: 100%;
     justify-content: center;
-    background-color: $clr-blue-100;
     padding-block: 0.75rem;
+    width: 100%;
 
     @include mq.media-sm {
       margin-block-start: 2.5rem;
     }
-
     #plan-slider {
+      background-color: $clr-blue-950;
+      border-radius: 999vw;
       cursor: pointer;
-      width: 2rem;
       height: 1rem;
       margin-inline: 1.5rem;
-      border-radius: 999vw;
-      background-color: $clr-blue-950;
-      position: relative;
       padding: 0.125rem;
+      position: relative;
+      width: 2rem;
 
       #slide {
-        border-radius: 50%;
-        position: absolute;
-        height: 0.75rem;
         aspect-ratio: 1;
         background-color: $clr-white;
+        border-radius: 50%;
+        height: 0.75rem;
+        position: absolute;
         right: 1.125rem;
         transition: right 0.25s ease;
       }
