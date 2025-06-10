@@ -16,7 +16,8 @@
     padding-inline: 1.5rem;
     width: 100dvw;
   }
-  #step-one-warning {
+  #step-one-warning,
+  #step-two-warning {
     color: $clr-stop;
     display: none;
     font-weight: t.$font-bold;

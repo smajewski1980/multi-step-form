@@ -213,11 +213,12 @@ function decrementCurrent() {
 }
 
 const btnsWrapper = document.getElementById("steps-buttons-wrapper");
+const noPlanWarning = document.getElementById("step-two-warning");
 
 function incrementCurrent() {
   if (stepOneFieldsComplete()) {
     if (currentStep === 2 && !isAplanChecked()) {
-      console.log("check a fucking plan!!!");
+      noPlanWarning.style.display = "block";
       return;
     }
     currentStep < 5 && currentStep++;
@@ -348,6 +349,7 @@ planCards.forEach((card) => {
     input.checked = true;
     const planName = input.value;
     signUpObj.plan = planName;
+    noPlanWarning.style.display = "none";
   });
 });
 

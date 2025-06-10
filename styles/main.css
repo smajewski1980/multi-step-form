@@ -493,7 +493,8 @@ aside .radio-wrapper label:nth-of-type(2) {
     width: 100dvw;
   }
 }
-#steps-buttons-wrapper #step-one-warning {
+#steps-buttons-wrapper #step-one-warning,
+#steps-buttons-wrapper #step-two-warning {
   color: red;
   display: none;
   font-weight: 700;
