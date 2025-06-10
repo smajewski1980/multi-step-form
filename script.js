@@ -152,6 +152,16 @@ function uncheckRadioBtns(elemArr) {
 uncheckRadioBtns(planBtns);
 uncheckRadioBtns(addOnBtns);
 
+function isAplanChecked() {
+  let count = 0;
+  planBtns.forEach((plan) => {
+    if (plan.checked === true) {
+      count++;
+    }
+  });
+  return count;
+}
+
 // **********starts the code for switching steps*******************
 // clear out current step
 function clearSteps() {
@@ -206,6 +216,10 @@ const btnsWrapper = document.getElementById("steps-buttons-wrapper");
 
 function incrementCurrent() {
   if (stepOneFieldsComplete()) {
+    if (currentStep === 2 && !isAplanChecked()) {
+      console.log("check a fucking plan!!!");
+      return;
+    }
     currentStep < 5 && currentStep++;
     if (currentStep === 4) signUpObj.generateSummary();
     if (currentStep === 5) {
