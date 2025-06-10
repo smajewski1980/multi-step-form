@@ -12,10 +12,11 @@
 
   @include mq.media-sm {
     width: 100dvw;
-    grid-row: 7 / 8;
+    grid-row: 8 / -1;
     grid-column: 1 / -1;
     align-items: center;
     // background-color: $clr-white;
+    padding-inline: 1.5rem;
   }
 
   #step-one-warning {

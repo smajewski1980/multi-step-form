@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as t;
+@use "../abstracts/media_queries" as mq;
 
 #step-two {
   display: none;
@@ -10,6 +11,11 @@
     margin-block: 2rem 1rem;
     justify-content: space-between;
     gap: 1rem;
+    flex: 1;
+
+    @include mq.media-sm {
+      flex-direction: column;
+    }
 
     .plan-card {
       border-radius: 5px;
@@ -18,6 +24,12 @@
       flex: 1;
       padding: 1rem;
       margin-bottom: 1rem;
+
+      @include mq.media-sm {
+        display: flex;
+        padding: 1rem;
+        margin: 0;
+      }
 
       input[type="radio"] {
         display: none;
@@ -31,6 +43,11 @@
       img {
         width: 45px;
         margin-bottom: 3rem;
+
+        @include mq.media-sm {
+          margin: 0;
+          margin-inline-end: 1rem;
+        }
       }
 
       label {
@@ -60,6 +77,10 @@
     justify-content: center;
     background-color: $clr-blue-100;
     padding-block: 0.75rem;
+
+    @include mq.media-sm {
+      margin-block-start: 2.5rem;
+    }
 
     #plan-slider {
       cursor: pointer;
