@@ -146,6 +146,7 @@ function updateCurrentStepBtn() {
   );
   newCurrentBtn[0].checked = true;
 }
+updateCurrentStepBtn();
 
 // get the step wrapper for the current checked radio btn
 function getStepWrapper() {

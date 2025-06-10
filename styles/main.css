@@ -82,10 +82,10 @@ main .steps-wrapper {
     width: 90%;
     margin-inline: auto;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    padding: 1rem 2rem;
-  }
-  main .steps-wrapper:has(#step-two) {
-    min-height: 600px;
+    padding: 2rem;
+    min-height: 475px;
+    height: -moz-min-content;
+    height: min-content;
   }
 }
 main .step {
@@ -478,6 +478,7 @@ aside .radio-wrapper label:nth-of-type(2) {
     grid-row: 8/-1;
     grid-column: 1/-1;
     align-items: center;
+    background-color: hsl(0, 100%, 100%);
     padding-inline: 1.5rem;
   }
 }
