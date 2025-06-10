@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as t;
+@use "../abstracts/media_queries" as mq;
 
 #step-four {
   display: none;
@@ -13,11 +14,12 @@
     }
 
     .summary-plan-wrapper,
-    .summary-add-on-wrapper {
+    .summary-add-on-wrapper,
+    .summary-price-wrapper {
       align-items: center;
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.7rem;
 
       &:has(.summary-plan-left-col) {
         padding-block: 1.25rem;
@@ -50,8 +52,9 @@
         color: $clr-blue-950;
       }
     }
+
     .summary-add-on-wrapper {
-      padding: 0.75rem;
+      padding: 0.7rem;
     }
     #summary-price {
       padding-block: 1.25rem;

@@ -324,46 +324,55 @@ main .step h2 {
   color: hsl(213, 96%, 18%);
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper,
-#step-four .summary-content-wrapper .summary-add-on-wrapper {
+#step-four .summary-content-wrapper .summary-add-on-wrapper,
+#step-four .summary-content-wrapper .summary-price-wrapper {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.7rem;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col),
-#step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col) {
+#step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col),
+#step-four .summary-content-wrapper .summary-price-wrapper:has(.summary-plan-left-col) {
   padding-block: 1.25rem;
   border-bottom: 1px solid #dddee4;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col) p:last-child:not(.summary-plan-left-col p),
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col) p:first-child,
 #step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col) p:last-child:not(.summary-plan-left-col p),
-#step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col) p:first-child {
+#step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col) p:first-child,
+#step-four .summary-content-wrapper .summary-price-wrapper:has(.summary-plan-left-col) p:last-child:not(.summary-plan-left-col p),
+#step-four .summary-content-wrapper .summary-price-wrapper:has(.summary-plan-left-col) p:first-child {
   font-weight: 700;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper .summary-plan-left-col,
-#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-plan-left-col {
+#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-plan-left-col,
+#step-four .summary-content-wrapper .summary-price-wrapper .summary-plan-left-col {
   display: grid;
   gap: 0.25rem;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper .summary-plan-left-col p:last-child,
-#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-plan-left-col p:last-child {
+#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-plan-left-col p:last-child,
+#step-four .summary-content-wrapper .summary-price-wrapper .summary-plan-left-col p:last-child {
   cursor: pointer;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper .summary-plan-left-col p:last-child:hover,
-#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-plan-left-col p:last-child:hover {
+#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-plan-left-col p:last-child:hover,
+#step-four .summary-content-wrapper .summary-price-wrapper .summary-plan-left-col p:last-child:hover {
   color: hsl(243, 100%, 62%);
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper .summary-text-wrapper,
-#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-text-wrapper {
+#step-four .summary-content-wrapper .summary-add-on-wrapper .summary-text-wrapper,
+#step-four .summary-content-wrapper .summary-price-wrapper .summary-text-wrapper {
   color: hsl(231, 11%, 63%);
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper .price,
-#step-four .summary-content-wrapper .summary-add-on-wrapper .price {
+#step-four .summary-content-wrapper .summary-add-on-wrapper .price,
+#step-four .summary-content-wrapper .summary-price-wrapper .price {
   color: hsl(213, 96%, 18%);
 }
 #step-four .summary-content-wrapper .summary-add-on-wrapper {
-  padding: 0.75rem;
+  padding: 0.7rem;
 }
 #step-four .summary-content-wrapper #summary-price {
   padding-block: 1.25rem;
@@ -388,12 +397,18 @@ main .step h2 {
   padding-inline-end: 3rem;
   height: 120%;
 }
+@media (width < 750px) {
+  #step-five {
+    margin-top: 5rem;
+    padding: 0;
+  }
+}
 #step-five img {
   width: 50px;
   margin-bottom: 1rem;
 }
 #step-five p {
-  width: 50ch;
+  max-width: 50ch;
   line-height: 1.5;
   text-align: center;
 }
