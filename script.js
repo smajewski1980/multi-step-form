@@ -228,6 +228,12 @@ function incrementCurrent() {
       btnsWrapper.style.pointerEvents = 'none';
       clearSteps();
       document.querySelector('aside').style.pointerEvents = 'none';
+
+      const radioWrappers = document.querySelectorAll('.radio-wrapper');
+      radioWrappers.forEach((rw) => {
+        rw.style.visibility = 'hidden';
+      });
+
       stepFiveWrapper.style.display = 'grid';
       handleSendRequest();
       return;
