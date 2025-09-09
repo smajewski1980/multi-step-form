@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <!-- displays site properly based on user's device -->
 
     <link
@@ -13,13 +16,21 @@
     />
 
     <title>Frontend Mentor | Multi-step form</title>
-    <link rel="stylesheet" href="./styles/main.css" />
-    <script src="./script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="./styles/main.css"
+    />
+    <script
+      src="./script.js"
+      defer
+    ></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
         text-align: center;
+        position: absolute;
+        bottom: 2.5rem;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -84,7 +95,10 @@
       </aside>
 
       <div class="steps-wrapper">
-        <div id="step-one" class="step">
+        <div
+          id="step-one"
+          class="step"
+        >
           <h2>Personal info</h2>
           <p>Please provide your name, email address, and phone number.</p>
 
@@ -125,13 +139,19 @@
           </form>
         </div>
 
-        <div id="step-two" class="step">
+        <div
+          id="step-two"
+          class="step"
+        >
           <h2>Select your plan</h2>
           <p>You have the option of monthly or yearly billing.</p>
 
           <div class="plan-card-wrapper">
             <div class="plan-card">
-              <img src="./assets/images/icon-arcade.svg" alt="arcade plan" />
+              <img
+                src="./assets/images/icon-arcade.svg"
+                alt="arcade plan"
+              />
               <input
                 type="radio"
                 name="plan"
@@ -164,8 +184,16 @@
             </div>
 
             <div class="plan-card">
-              <img src="./assets/images/icon-pro.svg" alt="pro plan" />
-              <input type="radio" name="plan" id="plan-pro" value="Pro plan" />
+              <img
+                src="./assets/images/icon-pro.svg"
+                alt="pro plan"
+              />
+              <input
+                type="radio"
+                name="plan"
+                id="plan-pro"
+                value="Pro plan"
+              />
               <label for="plan-pro"
                 ><span>Pro</span><br />
                 <span id="plan-span-3">$15/mo</span><br />
@@ -175,7 +203,12 @@
           </div>
 
           <div class="plan-slider-wrapper">
-            <p id="plan-monthly" class="slider-active">Monthly</p>
+            <p
+              id="plan-monthly"
+              class="slider-active"
+            >
+              Monthly
+            </p>
             <div id="plan-slider">
               <div id="slide"></div>
             </div>
@@ -183,7 +216,10 @@
           </div>
         </div>
 
-        <div id="step-three" class="step">
+        <div
+          id="step-three"
+          class="step"
+        >
           <h2>Pick add-ons</h2>
           <p>Add-ons help enhance your gaming experience.</p>
 
@@ -241,7 +277,10 @@
           </div>
         </div>
 
-        <div id="step-four" class="step">
+        <div
+          id="step-four"
+          class="step"
+        >
           <h2>Finishing up</h2>
           <p>Double-check everything looks OK before confirming.</p>
 
@@ -290,15 +329,24 @@
               </div>
             </div>
 
-            <div id="summary-price" class="summary-price-wrapper">
+            <div
+              id="summary-price"
+              class="summary-price-wrapper"
+            >
               <p>Total (per <span id="summary-total-billing-freq"></span>)</p>
               <p>$<span id="summary-total"></span></p>
             </div>
           </div>
         </div>
 
-        <div id="step-five" class="step">
-          <img src="./assets/images/icon-thank-you.svg" alt="thanks" />
+        <div
+          id="step-five"
+          class="step"
+        >
+          <img
+            src="./assets/images/icon-thank-you.svg"
+            alt="thanks"
+          />
 
           <h2>Thank you!</h2>
 
@@ -318,11 +366,13 @@
       </div>
     </main>
 
-    <!-- <div class="attribution">
+    <div class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Steve Majewski</a>.
-    </div> -->
+      >. Coded by Steve Majewski.
+    </div>
   </body>
 </html>

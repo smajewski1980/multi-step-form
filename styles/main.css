@@ -50,7 +50,7 @@ body {
 main {
   background-color: hsl(0, 100%, 100%);
   border-radius: 10px;
-  box-shadow: 0px 7px 15px -5px #dddee4;
+  box-shadow: 0px 7px 15px -5px hsl(231, 11%, 88%);
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 2fr;
@@ -288,7 +288,7 @@ main .step h2 {
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  outline: 2px solid #dddee4;
+  outline: 2px solid hsl(231, 11%, 88%);
   padding: 1rem;
 }
 #step-three .add-ons-wrapper .add-on-wrapper input {
@@ -334,7 +334,7 @@ main .step h2 {
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col),
 #step-four .summary-content-wrapper .summary-add-on-wrapper:has(.summary-plan-left-col),
 #step-four .summary-content-wrapper .summary-price-wrapper:has(.summary-plan-left-col) {
-  border-bottom: 1px solid #dddee4;
+  border-bottom: 1px solid hsl(231, 11%, 88%);
   padding-block: 1.25rem;
 }
 #step-four .summary-content-wrapper .summary-plan-wrapper:has(.summary-plan-left-col) p:last-child:not(.summary-plan-left-col p),
@@ -414,7 +414,7 @@ main .step h2 {
 }
 
 aside {
-  background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+  background-image: url("../assets/images/bg-sidebar-desktop.svg");
   background-repeat: no-repeat;
   background-size: contain;
   color: hsl(0, 100%, 100%);
@@ -426,7 +426,7 @@ aside {
 @media (width < 750px) {
   aside {
     align-items: start;
-    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+    background-image: url("../assets/images/bg-sidebar-mobile.svg");
     background-size: cover;
     display: flex;
     gap: 0.25rem;
